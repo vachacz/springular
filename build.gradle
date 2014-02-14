@@ -1,20 +1,33 @@
 
 buildscript {
    repositories {
+      mavenLocal()
+      maven { 
+         url 'http://dl.bintray.com/vermeulen-mp/gradle-plugins'
+      }
+      maven {
+         url 'http://repo1.maven.org/maven2'
+      }
       maven { 
          url "http://repo.spring.io/libs-snapshot" 
       }
-      mavenLocal()
+   }
+
+   dependencies {
+      classpath 'org.gradle.api.plugins:gradle-heroku:0.9.6'
    }
 }
 
 allprojects {
-repositories {
-   maven { 
-      url "http://repo.spring.io/libs-snapshot" 
+   repositories {
+      mavenCentral()
+      maven { 
+         url 'http://dl.bintray.com/vermeulen-mp/gradle-plugins'
+      }
+      maven { 
+         url "http://repo.spring.io/libs-snapshot" 
+      }
    }
-   mavenCentral()
-}
 }
 
 project(':server.api') {
@@ -80,4 +93,28 @@ project(':server.webapp') {
    war {
       baseName = 'angular-webapp'
    }
+}
+
+project(':springular.ear') {
+
+   apply plugin: 'ear'
+   //apply plugin: 'heroku'
+
+   ear {
+      baseName = 'springular'
+    
+      dependsOn(":server.war:war")
+      dependsOn(":server.webapp:war")
+   }
+
+   //heroku {
+   //   appName = 'springular'
+   //   apiKey = '654ea240-b802-47cc-b396-7d70ce9437ab'
+   //}
+
+   dependencies {
+      deploy project(path: ':server.war', configuration: 'archives')
+      deploy project(path: ':server.webapp', configuration: 'archives')
+   }
+
 }

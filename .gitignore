@@ -4,3 +4,11 @@
 /server.api/build
 /server.rest/build
 /server.war/build
+/springular.ear/build
+/server.war/build
+/server.war/build
+/.gradle
+*.swp
+/server.rest/bin
+/server.api/bin
+/server.webapp/build
