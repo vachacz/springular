@@ -1,0 +1,6 @@
+*.class
+
+/server.api/build
+/server.api/build
+/server.rest/build
+/server.war/build
