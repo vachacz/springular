@@ -1,0 +1,27 @@
+<div class="span6">
+  <pagination direction-links="true" total-items="usersTotal" page="usersPage" on-select-page="usersPageSet(page)" items-per-page="usersPerPage"></pagination>
+  <table class="table table-striped table-condensed" style="width: 360px;">
+    <thead>
+      <tr>
+        <th style="min-width: 120px;">Login</th>
+        <th style="min-width: 180px;">First name</th>
+        <th style="min-width: 180px;">Last name</th>
+        <th style="min-width: 80px;">Nationality</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="user in usersPagedList">
+        <td>{{ user.login }}</td>
+        <td>{{ user.firstName }}</td>
+        <td>{{ user.lastName }}</td>
+        <td align="center"><img ng-src="img/flag_{{ user.nationality }}.png"></td>
+        <td>
+          <div class="btn-group btn-group-xs">
+             <button type="button" class="btn btn-primary" ng-click="editUser(user)">Edit</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

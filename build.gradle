@@ -1,0 +1,83 @@
+
+buildscript {
+   repositories {
+      maven { 
+         url "http://repo.spring.io/libs-snapshot" 
+      }
+      mavenLocal()
+   }
+}
+
+allprojects {
+repositories {
+   maven { 
+      url "http://repo.spring.io/libs-snapshot" 
+   }
+   mavenCentral()
+}
+}
+
+project(':server.api') {
+
+   apply plugin: 'java'
+   apply plugin: 'eclipse-wtp'
+
+   eclipse.project {
+      natures 'org.springsource.ide.eclipse.gradle.core.nature'
+      natures 'org.eclipse.jdt.groovy.core.groovyNature'
+      natures 'org.springframework.ide.eclipse.core.springnature'
+   }
+
+   dependencies {
+      compile 'org.hibernate:hibernate-validator:5.0.2.Final'
+
+      compile 'org.aspectj:aspectjrt:1.7.4'
+      compile 'org.aspectj:aspectjweaver:1.7.4'
+      compile 'org.springframework:spring-aop:4.0.0.RELEASE'
+   }
+}
+
+project(':server.rest') {
+
+   apply plugin: 'java'
+   apply plugin: 'eclipse-wtp'
+
+   eclipse.project {
+      natures 'org.springsource.ide.eclipse.gradle.core.nature'
+      natures 'org.eclipse.jdt.groovy.core.groovyNature'
+      natures 'org.springframework.ide.eclipse.core.springnature'
+   }
+
+   dependencies {
+      compile project(':server.api')
+
+      compile 'org.springframework:spring-webmvc:4.0.0.RELEASE'
+
+      compile 'org.codehaus.jackson:jackson-core-asl:1.9.8'
+      compile 'org.codehaus.jackson:jackson-mapper-asl:1.9.8'
+   }
+
+}
+
+project(':server.war') {
+   apply plugin: 'war'
+   apply plugin: 'eclipse-wtp'
+
+   war {
+      baseName = 'angular-rest'
+   }
+
+   dependencies {
+      compile project(':server.rest')
+   }
+}
+
+
+project(':server.webapp') {
+   apply plugin: 'war'
+   apply plugin: 'eclipse-wtp'
+
+   war {
+      baseName = 'angular-webapp'
+   }
+}
