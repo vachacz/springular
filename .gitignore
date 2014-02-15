@@ -12,3 +12,5 @@
 /server.rest/bin
 /server.api/bin
 /server.webapp/build
+/server.api/.classpath
+/server.api/.project

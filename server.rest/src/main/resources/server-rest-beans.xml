@@ -10,9 +10,6 @@
 
     <context:annotation-config />
     
-    <bean id="authController" class="pl.vachacz.angular.server.rest.controller.UserController" />
-    <bean id="masterdataController" class="pl.vachacz.angular.server.rest.controller.MasterdataController" />
-    
     <bean id="jacksonMessageConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"/>
     
 	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
@@ -30,5 +27,8 @@
 	        </list>
 	    </property>
 	</bean>
+	
+    <bean id="authController" class="com.github.springular.server.rest.controller.UserController" />
+    <bean id="masterdataController" class="com.github.springular.server.rest.controller.MasterdataController" />
 
 </beans>
