@@ -14,3 +14,14 @@
 /server.webapp/build
 /server.api/.classpath
 /server.api/.project
+/server.webapp/.settings
+/server.webapp/.classpath
+/server.webapp/.project
+/server.webapp/.settings
+/server.war/.project
+/server.war/.settings
+/server.war/.classpath
+/server.rest/.settings
+/server.rest/.classpath
+/server.rest/.project
+/server.api/.settings
