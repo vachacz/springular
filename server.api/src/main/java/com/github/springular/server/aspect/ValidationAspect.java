@@ -61,7 +61,7 @@ public class ValidationAspect {
 			for (ConstraintViolation<?> violation : violations) {
 				builder.addMessage(violation.getMessage());
 			}
-			throw builder.excetpion();
+			throw builder.exception();
 		}
 		
 		return joinPoint.proceed();

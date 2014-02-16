@@ -21,28 +21,28 @@ public class UserDataStore {
 		random = new Random();
 		userDB = new HashMap<String, UserDO>();
 		
-		createUserWithLogin("stoch", Nationality.POLAD);
-		createUserWithLogin("zyla", Nationality.POLAD);
-		createUserWithLogin("ziobro", Nationality.POLAD);
-		createUserWithLogin("hula", Nationality.POLAD);
-		createUserWithLogin("muranka", Nationality.POLAD);
-		createUserWithLogin("kubacki", Nationality.POLAD);
-		createUserWithLogin("biegun", Nationality.POLAD);
-		createUserWithLogin("kot", Nationality.POLAD);
-		createUserWithLogin("zniszczol", Nationality.POLAD);
+		createUserWithLogin("stoch", Nationality.POLAND);
+		createUserWithLogin("zyla", Nationality.POLAND);
+		createUserWithLogin("ziobro", Nationality.POLAND);
+		createUserWithLogin("hula", Nationality.POLAND);
+		createUserWithLogin("muranka", Nationality.POLAND);
+		createUserWithLogin("kubacki", Nationality.POLAND);
+		createUserWithLogin("biegun", Nationality.POLAND);
+		createUserWithLogin("kot", Nationality.POLAND);
+		createUserWithLogin("zniszczol", Nationality.POLAND);
 		createUserWithLogin("bardal", Nationality.NORWAY);
 		createUserWithLogin("hilde", Nationality.NORWAY);
 		createUserWithLogin("velta", Nationality.NORWAY);
 		createUserWithLogin("stjernen", Nationality.NORWAY);
-		createUserWithLogin("freitag", Nationality.GERMAN);
-		createUserWithLogin("hannawald", Nationality.GERMAN);
-		createUserWithLogin("freund", Nationality.GERMAN);
+		createUserWithLogin("freitag", Nationality.GERMANY);
+		createUserWithLogin("hannawald", Nationality.GERMANY);
+		createUserWithLogin("freund", Nationality.GERMANY);
 		createUserWithLogin("jacobsen", Nationality.NORWAY);
 		createUserWithLogin("fannemel", Nationality.NORWAY);
-		createUserWithLogin("neumayer", Nationality.GERMAN);
-		createUserWithLogin("schmitt", Nationality.GERMAN);
-		createUserWithLogin("wank", Nationality.GERMAN);
-		createUserWithLogin("wellinger", Nationality.GERMAN);
+		createUserWithLogin("neumayer", Nationality.GERMANY);
+		createUserWithLogin("schmitt", Nationality.GERMANY);
+		createUserWithLogin("wank", Nationality.GERMANY);
+		createUserWithLogin("wellinger", Nationality.GERMANY);
 	}
 	
 	public List<UserDO> getUsers() {

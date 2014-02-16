@@ -1,14 +1,14 @@
 var services = angular.module('angular.rest', ['ngResource']);
 
 services.factory('UsersFactory', function ($resource) {
-    return $resource('http://localhost:8081/angular/users', {}, {
+    return $resource('/angular-rest/users', {}, {
     	get: { method: 'GET', isArray: true },
         query: { method: 'GET', isArray: true }
     });
 });
 
 services.factory('UserFactory', function ($resource) {
-    return $resource('http://localhost:8081/angular/user', {}, {
+    return $resource('/angular-rest/user', {}, {
     	update: { method: 'POST' }
     });
 });
@@ -57,7 +57,7 @@ app.controller('controller.modal.user', ['$scope', '$modalInstance', '$modal', '
     $scope.user = user;
     $scope.errorMessages = [];
     
-    $http.get('http://localhost:8081/angular/masterdata/nationalities').
+    $http.get('/angular-rest/masterdata/nationalities').
 	  success(function(data) {
 	    $scope.nationalities = data;
 	  });

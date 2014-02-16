@@ -37,7 +37,7 @@ public class UserBCI implements IUserBCI {
 		}
 
 		if (errorBuilder.hasMessages()) {
-			throw errorBuilder.excetpion();
+			throw errorBuilder.exception();
 		}
 
 		persistentUser.setLogin(user.getLogin());
