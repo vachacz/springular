@@ -18,7 +18,7 @@
     <bean name="resourceBundleLocator" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
         <property name="basenames">
             <list>
-               <value>classpath*:validation</value>
+               <value>classpath:messages/validation</value>
             </list>
         </property>
     </bean>

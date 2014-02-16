@@ -5,17 +5,17 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 public class UserDO {
 
-	@NotEmpty
+	@NotEmpty(message = "{User.NotEmpty.id}")
 	private String id;
 	
-	@NotEmpty
-	@Length(min = 8, max = 12)
+	@NotEmpty(message = "{User.NotEmpty.login}")
+	@Length(min = 8, max = 12, message = "{User.Length.login}")
 	private String login;
 	
-	@NotEmpty
+	@NotEmpty(message = "{User.NotEmpty.firstName}")
 	private String firstName;
 	
-	@NotEmpty
+	@NotEmpty(message = "{User.NotEmpty.lastName}")
 	private String lastName;
 	
 	private String nationality;
