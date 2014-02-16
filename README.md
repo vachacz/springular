@@ -21,9 +21,11 @@ DONE
 TODO
 ==========
 - deploy on cloud
+  - including spring profiles for development/deployment (when needed)
 - security (+login, +registration, +cookie handling in rest service)
   - simple permission system (+role based, +field based?)
 - datastore (+nosql on cloud?)
+  - transaction handling
 - bower, grunt, yo integration (if reasonable)
 - testing
   - server side unit tests + integration tests with rest
@@ -33,6 +35,8 @@ TODO
   - registration + login
   - one more page with dummy content (+ some non trivial UI)
   - field marking after validation error (+background/border or +nice tooltip with validation message)
+- logging
+- javascript (+how to structure angular controllers in project)
 - more ... TBD?
 
 SETUP
