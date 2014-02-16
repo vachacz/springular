@@ -2,8 +2,8 @@ package com.github.springular.server.component.user;
 
 public enum Nationality {
 
-	POLAD("PL"),
-	GERMAN("DE"),
+	POLAND("PL"),
+	GERMANY("DE"),
 	NORWAY("NO");
 
 	private String code;
