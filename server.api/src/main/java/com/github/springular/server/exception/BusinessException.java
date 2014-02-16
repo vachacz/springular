@@ -26,7 +26,7 @@ public class BusinessException extends RuntimeException {
 			return !exception.messages.isEmpty();
 		}
 
-		public BusinessException excetpion() {
+		public BusinessException exception() {
 			throw exception;
 		}
 	}
