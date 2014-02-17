@@ -41,11 +41,18 @@ TODO
 
 SETUP
 ==========
-- install gradle + eclipse STS (including tc-server / tomcat)
+- install 
+  - gradle
+  - IDE : eclipse STS (including tc-server / tomcat)
 - gradle eclipse
 - import projects into eclipse
 - create a server in eclipse
 - add server.war and server.webapp projects to server deployments
 - start the server and publish the application
-- type localhost:<port>/angular-webapp/index.html
+  - make sure that context-root is properly set in your http server
+    - localhost:<port>/angular-rest
+    - localhost:<port>/angular-webapp
+- test the stuff
+  - webservice -> type localhost:<port>/angular-rest/users
+  - application -> localhost:<port>/angular-webapp/index.html
 - enjoy !
