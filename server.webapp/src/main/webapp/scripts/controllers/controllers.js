@@ -1,4 +1,4 @@
-var services = angular.module('angular.rest', ['ngResource']);
+var services = angular.module('springular.rest', ['ngResource']);
 
 services.factory('UsersFactory', function ($resource) {
     return $resource('/angular-rest/users', {}, {
@@ -13,7 +13,7 @@ services.factory('UserFactory', function ($resource) {
     });
 });
 
-var app = angular.module('modul.userAdministration', [ 'angular.rest', 'ui.bootstrap' ]);
+var app = angular.module('module.userAdministration', [ 'springular.rest', 'ui.bootstrap' ]);
 
 app.controller('controller.users', ['$scope', '$modal', '$location', '$http', 'UsersFactory', 'UserFactory', function ($scope, $modal, $location, $http, UsersFactory, UserFactory) {
 

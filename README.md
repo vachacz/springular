@@ -37,6 +37,7 @@ TODO
   - field marking after validation error (+background/border or +nice tooltip with validation message)
 - logging
 - javascript (+how to structure angular controllers in project)
+- implement nd-directive for checking current location (http://stackoverflow.com/questions/16199418/how-do-i-implement-the-bootstrap-navbar-active-class-with-angular-js)
 - more ... TBD?
 
 SETUP

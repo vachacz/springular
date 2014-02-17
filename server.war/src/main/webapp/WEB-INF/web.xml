@@ -4,7 +4,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
  
   <servlet>
-    <servlet-name>sample</servlet-name>
+    <servlet-name>angular-rest</servlet-name>
     <servlet-class>
         org.springframework.web.servlet.DispatcherServlet
     </servlet-class>
@@ -15,7 +15,7 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
   </servlet>
  
   <servlet-mapping>
-    <servlet-name>sample</servlet-name>
+    <servlet-name>angular-rest</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
   

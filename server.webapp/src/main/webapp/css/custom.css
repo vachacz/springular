@@ -37,3 +37,20 @@
 .animating.ng-hide-add.ng-hide-add-active {
     opacity: 0;
 }
+
+.compact-form {
+	display: block;
+	width: 130px;
+	color: #2b3e50;
+	padding-top: 2px;
+	padding-left: 4px;
+	margin-top: 6px;
+	font-size: 15px;
+	line-height: 1.42857143;
+	border: 1px solid transparent;
+	border-radius: 0;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	-webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
