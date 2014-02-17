@@ -6,7 +6,7 @@ Demo application (AngularJS + Spring REST)
 DONE
 ==========
 - project structure
-- gradle build (+ eclipse integration)
+- gradle build (+eclipse integration)
   - generation of project EAR (inside: WAR with spring rest service, WAR with angular webapp)
 - spring rest service
   - aspect driven hibernate validator (+ custom validation messages)
@@ -43,16 +43,16 @@ SETUP
 ==========
 - install 
   - gradle
-  - IDE : eclipse STS (including tc-server / tomcat)
+  - IDE: eclipse STS (including tc-server / tomcat)
 - gradle eclipse
 - import projects into eclipse
 - create a server in eclipse
-- add server.war and server.webapp projects to server deployments
+- add `server.war` and `server.webapp` projects to server deployments
 - start the server and publish the application
   - make sure that context-root is properly set in your http server
-    - localhost:<port>/angular-rest
-    - localhost:<port>/angular-webapp
-- test the stuff
-  - webservice -> type localhost:<port>/angular-rest/users
-  - application -> localhost:<port>/angular-webapp/index.html
-- enjoy !
+    - `http://localhost:<port>/angular-rest`
+    - `http://localhost:<port>/angular-webapp`
+- test the stuff:
+  - webservice: `http://localhost:<port>/angular-rest/users`
+  - application: `http://localhost:<port>/angular-webapp/index.html`
+- enjoy!
