@@ -50,8 +50,8 @@ SpringularUser.controller('controller.modal.user', ['$scope', '$modalInstance', 
 		$user.$save(function() {
 			$modalInstance.close();
 			$location.path( "/users" );
-		}, function(errors) {
-			$scope.errorMessages = errors.data.messages;
+		}, function(response) {
+			$scope.errorMessages = response.data.messages;
 		});
 	};
 

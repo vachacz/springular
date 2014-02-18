@@ -21,8 +21,7 @@ public class UserController extends BaseController {
 	@ResponseBody
 	@RequestMapping(value = "/user", method = RequestMethod.GET)
 	public List<UserDO> getUsers() {
-		List<UserDO> users = authBCI.getUsers();
-		return users;
+		return authBCI.getUsers();
 	}
 	
     @ResponseBody
