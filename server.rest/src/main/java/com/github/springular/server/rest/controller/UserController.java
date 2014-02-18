@@ -18,14 +18,15 @@ public class UserController extends BaseController {
 
 	@Autowired IUserBCI authBCI;
 	
-	@RequestMapping("/users")
-	public @ResponseBody List<UserDO> getUsers() {
+	@ResponseBody
+	@RequestMapping(value = "/user", method = RequestMethod.GET)
+	public List<UserDO> getUsers() {
 		List<UserDO> users = authBCI.getUsers();
 		return users;
 	}
 	
     @ResponseBody
-    @RequestMapping(value = "/user", method = RequestMethod.POST)
+    @RequestMapping(value = "/user/{id}", method = RequestMethod.POST)
     public void updateUser(@RequestBody UserDO user) {
         authBCI.updateUser(user);
     }

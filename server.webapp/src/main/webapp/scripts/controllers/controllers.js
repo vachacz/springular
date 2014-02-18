@@ -1,27 +1,29 @@
 var services = angular.module('springular.rest', ['ngResource']);
 
-services.factory('UsersFactory', function ($resource) {
-    return $resource('/angular-rest/users', {}, {
-    	get: { method: 'GET', isArray: true },
-        query: { method: 'GET', isArray: true }
-    });
+services.factory('RestApiUser', function ($resource) {
+	return $resource('/angular-rest/user/:id', {id: '@id'});
 });
 
-services.factory('UserFactory', function ($resource) {
-    return $resource('/angular-rest/user', {}, {
-    	update: { method: 'POST' }
-    });
+services.factory('RestApiMasterdata', function ($http) {
+	var api = {};
+	api.getNationalities = function() {
+	   return $http({ 
+		   url:'/angular-rest/masterdata/nationalities',
+		   method: 'GET'
+	   });
+	};
+	return api;
 });
 
 var app = angular.module('module.userAdministration', [ 'springular.rest', 'ui.bootstrap' ]);
 
-app.controller('controller.users', ['$scope', '$modal', '$location', '$http', 'UsersFactory', 'UserFactory', function ($scope, $modal, $location, $http, UsersFactory, UserFactory) {
+app.controller('controller.users', ['$scope', '$modal', '$location', '$http', 'RestApiUser', function ($scope, $modal, $location, $http, RestApiUser) {
 
 	$scope.usersPage = 1;
 	$scope.usersPerPage = 10;
 	$scope.usersPagedList = [];
 	
-	UsersFactory.get({}, function (users) {
+	RestApiUser.query({}, function (users) {
         $scope.users = users;
         $scope.usersTotal = users.length;
         $scope.computePagedUsers();
@@ -52,27 +54,22 @@ app.controller('controller.users', ['$scope', '$modal', '$location', '$http', 'U
     };
 }]);
 
-app.controller('controller.modal.user', ['$scope', '$modalInstance', '$modal', '$location', '$http', 'UserFactory', 'user', function($scope, $modalInstance, $modal, $location, $http, UserFactory, user) {
+app.controller('controller.modal.user', ['$scope', '$modalInstance', '$modal', '$location', 'RestApiMasterdata', 'RestApiUser', 'user', function($scope, $modalInstance, $modal, $location, RestApiMasterdata, RestApiUser, user) {
 
     $scope.user = user;
     $scope.errorMessages = [];
     
-    $http.get('/angular-rest/masterdata/nationalities').
-	  success(function(data) {
-	    $scope.nationalities = data;
-	  });
+    RestApiMasterdata.getNationalities().success(function(result) {
+    	$scope.nationalities = result;
+    });
     
 	$scope.saveUser = function($user) {
-		UserFactory.update($user, 
-			function() {
-			    $scope.errorMessages = [];
-				$modalInstance.close();
-				$location.path( "/users" );
-			}, 
-			function(errors) {
-				$scope.errorMessages = errors.data.messages;
-			} 
-		);
+		$user.$save(function() {
+			$modalInstance.close();
+			$location.path( "/users" );
+		}, function(errors) {
+			$scope.errorMessages = errors.data.messages;
+		});
 	};
 
     $scope.closeUser = function () {

@@ -13,8 +13,8 @@ mainPage.controller('controller.main', ['$scope', '$modal', '$location', functio
 	
 	$scope.register = function () {
 	    var modalInstance = $modal.open({
-	      templateUrl: 'views/register.html',
-	      controller: 'controller.modal.register',
+	        templateUrl: 'views/register.html',
+	        controller: 'controller.modal.register',
 	    });
 	};
 	
