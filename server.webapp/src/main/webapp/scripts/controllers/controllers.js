@@ -1,23 +1,6 @@
-var services = angular.module('springular.rest', ['ngResource']);
+var SpringularUser = angular.module('module.userAdministration', [ 'springular.rest', 'ui.bootstrap' ]);
 
-services.factory('RestApiUser', function ($resource) {
-	return $resource('/angular-rest/user/:id', {id: '@id'});
-});
-
-services.factory('RestApiMasterdata', function ($http) {
-	var api = {};
-	api.getNationalities = function() {
-	   return $http({ 
-		   url:'/angular-rest/masterdata/nationalities',
-		   method: 'GET'
-	   });
-	};
-	return api;
-});
-
-var app = angular.module('module.userAdministration', [ 'springular.rest', 'ui.bootstrap' ]);
-
-app.controller('controller.users', ['$scope', '$modal', '$location', '$http', 'RestApiUser', function ($scope, $modal, $location, $http, RestApiUser) {
+SpringularUser.controller('controller.users', ['$scope', '$modal', '$location', '$http', 'RestApiUser', function ($scope, $modal, $location, $http, RestApiUser) {
 
 	$scope.usersPage = 1;
 	$scope.usersPerPage = 10;
@@ -54,7 +37,7 @@ app.controller('controller.users', ['$scope', '$modal', '$location', '$http', 'R
     };
 }]);
 
-app.controller('controller.modal.user', ['$scope', '$modalInstance', '$modal', '$location', 'RestApiMasterdata', 'RestApiUser', 'user', function($scope, $modalInstance, $modal, $location, RestApiMasterdata, RestApiUser, user) {
+SpringularUser.controller('controller.modal.user', ['$scope', '$modalInstance', '$modal', '$location', 'RestApiMasterdata', 'RestApiUser', 'user', function($scope, $modalInstance, $modal, $location, RestApiMasterdata, RestApiUser, user) {
 
     $scope.user = user;
     $scope.errorMessages = [];
