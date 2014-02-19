@@ -11,8 +11,12 @@ mainPage.controller('controller.main', ['$scope', '$modal', '$location', '$cooki
 	$scope.signIn = function () {
 		AuthService.signIn($scope.credentials).then(function (loginResult) {
 			$scope.userLoggedIn = loginResult;
+			if (loginResult) {
+				$cookieStore.put('userLoggedIn', 'true');
+			} else {
+				showLoginFailedPopover();
+			}
 		});
-		$cookieStore.put('userLoggedIn', 'true');
 	};
 	
 	$scope.signOut = function () {
@@ -31,6 +35,23 @@ mainPage.controller('controller.main', ['$scope', '$modal', '$location', '$cooki
 			templateUrl: 'views/register.html',
 			controller: 'controller.modal.register',
 		});
+	};
+
+	showLoginFailedPopover = function() {
+		$("#signInButton")
+		.popover({
+		    html: 'true',
+		    title : '<span class="text-info"><strong>Login failed</strong></span> <button type="button" id="closeLoginFailed" class="close">&times;</button>',
+			content: "Please, reenter your credentials.",
+			placement: "bottom"
+		})
+		.on('shown.bs.popover', function () {
+		    var $popup = $(this);
+		    $(this).next('.popover').find('#closeLoginFailed').click(function (e) {
+		        $popup.popover('hide');
+		    });
+		})
+		.popover('show');
 	};
 	
 }]);

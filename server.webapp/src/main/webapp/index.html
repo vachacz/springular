@@ -8,6 +8,8 @@
     <script src="lib/angular-resource.js"></script>
     <script src="lib/ui-bootstrap.js"></script>
     <script src="lib/jquery.js"></script>
+    <script src="lib/tooltip.js"></script>
+    <script src="lib/popover.js"></script>
     <script src="scripts/app.js"></script>
     <script src="scripts/directives/directives.js"></script>
     <script src="scripts/services/services.js"></script>
@@ -55,7 +57,7 @@
                <p class="navbar-text">Welcome {{ credentials.login }} !</p>
             </div>
             
-            <button type="submit" class="btn btn-default" ng-click="signIn()" ng-if="!userLoggedIn">Sign in</button>
+            <button type="submit" id="signInButton" class="btn btn-default" ng-click="signIn()" ng-if="!userLoggedIn">Sign in</button>
             <button type="submit" class="btn btn-default" ng-click="register()" ng-if="!userLoggedIn">Register</button>
             <button type="submit" class="btn btn-default" ng-click="signOut()" ng-if="userLoggedIn">Sign out</button>
             
