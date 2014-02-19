@@ -30,4 +30,11 @@ public class UserController extends BaseController {
         authBCI.updateUser(user);
     }
     
+    @ResponseBody
+    @RequestMapping(value = "/user/accessDenied", method = RequestMethod.POST)
+    public String accessDenied() {
+        return "accessDenied"; 
+    }
+    
 }
+

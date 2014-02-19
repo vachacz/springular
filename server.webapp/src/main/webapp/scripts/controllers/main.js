@@ -1,5 +1,5 @@
 var mainPage = angular.module('module.main', [ 'springular.rest' ]);
-mainPage.controller('controller.main', ['$scope', '$modal', '$location', function ($scope, $modal, $location) {
+mainPage.controller('controller.main', ['$scope', '$modal', '$location', 'RestApiLogin', function ($scope, $modal, $location, RestApiLogin) {
 
 	$scope.userLoggedIn = false;
 	$scope.credentials = {
@@ -8,6 +8,7 @@ mainPage.controller('controller.main', ['$scope', '$modal', '$location', functio
 	};
 	
 	$scope.signIn = function () {
+		RestApiLogin.login($scope.credentials);
 	    $scope.userLoggedIn = true;
 	};
 	
