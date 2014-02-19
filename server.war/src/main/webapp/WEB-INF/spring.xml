@@ -18,8 +18,11 @@
   <beans:import resource="classpath:server-api-beans.xml" />
   <beans:import resource="classpath:server-rest-beans.xml" />
 
-  <http create-session="stateless">
+  <http>
     <http-basic entry-point-ref="restAuthenticationEntryPoint"/>
+    
+    <!-- TODO avoid redirect after signout ... -->
+    <logout logout-url="/signout" />
     
 	<intercept-url pattern="/secured/*" access="ROLE_USER" />
   </http>
@@ -34,33 +37,5 @@
   </authentication-manager>
 
   <beans:bean id="restAuthenticationEntryPoint" class="com.github.springular.server.security.RestAuthenticationEntryPoint" />
-  
 
-<!-- 
-  <beans:bean id="mySuccessHandler" class="com.github.springular.server.security.MySavedRequestAwareAuthenticationSuccessHandler"/>
-  <beans:bean id="myFailureHandler" class="org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler"/>
-  
-  <beans:bean id="accessDeniedHandler" class="org.springframework.security.web.access.AccessDeniedHandlerImpl">
-    <beans:property name="errorPage" value="/user/accessDenied"/>
-  </beans:bean>
-  
-  <security:http create-session="stateless" entry-point-ref="authenticationEntryPoint" authentication-manager-ref="authenticationManager">
-    <security:custom-filter ref="customRestFilter" position="BASIC_AUTH_FILTER" />
-	<security:intercept-url pattern="/masterdata/**" access="ROLE_USER" />
-  </security:http>
-
-  <bean id="authenticationEntryPoint" class="org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint">
-    <property name="realmName" value="Not Authorized" />
-  </bean>
- 
-  <bean id="customRestFilter" class="com.github.springular.server.security.CustomRestSecurityFilter">
-    <constructor-arg name="authenticationManager" ref="authenticationManager" />
-  </bean>
- 
-  <security:authentication-manager alias="authenticationManager">
-    <security:authentication-provider ref="restAuthenticationProvider" />
-  </security:authentication-manager>
- 
-  <bean id="restAuthenticationProvider" class="com.github.springular.server.security.RestAuthenticationProvider" />
-   -->
 </beans:beans>

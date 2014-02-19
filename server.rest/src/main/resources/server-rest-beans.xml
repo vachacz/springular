@@ -30,6 +30,7 @@
 	
     <bean id="userController" class="com.github.springular.server.rest.controller.UserController" />
     <bean id="authController" class="com.github.springular.server.rest.controller.AuthController" />
+    <bean id="paymentController" class="com.github.springular.server.rest.controller.PaymentController" />
     <bean id="masterdataController" class="com.github.springular.server.rest.controller.MasterdataController" />
 
 </beans>

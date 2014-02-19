@@ -1,33 +1,38 @@
 var mainPage = angular.module('module.main', [ 'springular.rest' ]);
-mainPage.controller('controller.main', ['$scope', '$modal', '$location', 'RestApiLogin', function ($scope, $modal, $location, RestApiLogin) {
+mainPage.controller('controller.main', ['$scope', '$modal', '$location', '$cookieStore', 'AuthService', function ($scope, $modal, $location, $cookieStore, AuthService) {
 
-	$scope.userLoggedIn = false;
+	$scope.userLoggedIn = $cookieStore.get('userLoggedIn');
+	
 	$scope.credentials = {
 		login : "",
 		password : ""
 	};
 	
 	$scope.signIn = function () {
-		RestApiLogin.login($scope.credentials);
-	    $scope.userLoggedIn = true;
-	};
-	
-	$scope.register = function () {
-	    var modalInstance = $modal.open({
-	        templateUrl: 'views/register.html',
-	        controller: 'controller.modal.register',
-	    });
+		AuthService.signIn($scope.credentials).then(function (loginResult) {
+			$scope.userLoggedIn = loginResult;
+		});
+		$cookieStore.put('userLoggedIn', 'true');
 	};
 	
 	$scope.signOut = function () {
+		AuthService.signOut();
 		$scope.userLoggedIn = false;
+		$cookieStore.remove('userLoggedIn');
+		$scope.credentials = {
+			login : "",
+			password : ""
+		};
 		$location.path( "/" );
 	};
 	
-    $scope.isActive = function (viewLocation) { 
-        return viewLocation === $location.path();
-    };
-
+	$scope.register = function () {
+		var modalInstance = $modal.open({
+			templateUrl: 'views/register.html',
+			controller: 'controller.modal.register',
+		});
+	};
+	
 }]);
 
 mainPage.controller('controller.modal.register', ['$scope', '$modalInstance', function($scope, $modalInstance) {

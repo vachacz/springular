@@ -12,6 +12,7 @@
     <script src="scripts/directives/directives.js"></script>
     <script src="scripts/services/services.js"></script>
     <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/payments.js"></script>
     <script src="scripts/controllers/controllers.js"></script>
     
     <link href="css/custom.css" rel="stylesheet">
@@ -37,6 +38,7 @@
 	      <ul class="nav navbar-nav">
 	        <li activate-on path="/users"><a href="#/users">Users</a></li>
 	        <li activate-on path="/todo"><a href="#/todo">ToDo</a></li>
+	        <li activate-on path="/payments" ng-if="userLoggedIn"><a href="#/payments">Payments</a></li>
 	      </ul>
 	      
           <form class="navbar-form navbar-right" role="login">
