@@ -1,4 +1,4 @@
-package com.github.springular.server.configuration;
+package com.github.springular.server.configuration.rest;
 
 import java.io.IOException;
 
