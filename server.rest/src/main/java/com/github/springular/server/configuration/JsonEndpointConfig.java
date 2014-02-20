@@ -15,24 +15,6 @@ import com.github.springular.server.rest.controller.ControllerPackegeMarker;
 @ComponentScan(basePackageClasses = { ControllerPackegeMarker.class })
 public class JsonEndpointConfig {
 
-//  <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
-//  <property name="messageConverters">
-//    <list>
-//        <ref bean="jacksonMessageConverter"/>
-//    </list>
-//  </property>
-//</bean>
-//
-//<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerExceptionResolver">
-//    <property name="messageConverters">
-//        <list>
-//        <ref bean="jacksonMessageConverter"/>
-//        </list>
-//    </property>
-//</bean>
-//
-//  <bean id="jacksonMessageConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"/>
- 
   @Autowired
   private MappingJacksonHttpMessageConverter mappingJacksonHttpMessageConverter;
   
