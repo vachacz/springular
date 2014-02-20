@@ -1,0 +1,19 @@
+<div class="span6">
+  <table class="table table-striped table-condensed" style="width: 360px;">
+    <thead>
+      <tr>
+        <th style="min-width: 120px;">Name</th>
+        <th style="min-width: 180px;">Quantity</th>
+        <th style="min-width: 180px;">Price</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="payment in payments">
+        <td>{{ payment.name }}</td>
+        <td>{{ payment.quantity }}</td>
+        <td>{{ payment.price }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
