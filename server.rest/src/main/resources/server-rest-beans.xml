@@ -10,7 +10,8 @@
 
     <context:annotation-config />
     
-    <bean id="jacksonMessageConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"/>
+    <bean class="com.github.springular.server.configuration.SpringSecurityConfig" />
+    
     
 	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
 		<property name="messageConverters">
@@ -27,6 +28,8 @@
 	        </list>
 	    </property>
 	</bean>
+
+    <bean id="jacksonMessageConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"/>
 	
     <bean id="userController" class="com.github.springular.server.rest.controller.UserController" />
     <bean id="authController" class="com.github.springular.server.rest.controller.AuthController" />

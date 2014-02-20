@@ -17,25 +17,5 @@
  
   <beans:import resource="classpath:server-api-beans.xml" />
   <beans:import resource="classpath:server-rest-beans.xml" />
-
-  <http>
-    <http-basic entry-point-ref="restAuthenticationEntryPoint"/>
-    
-    <!-- TODO avoid redirect after signout ... -->
-    <logout logout-url="/signout" />
-    
-	<intercept-url pattern="/secured/*" access="ROLE_USER" />
-  </http>
-
-  <authentication-manager>
-	<authentication-provider>
-	  <user-service>
-	    <user name="lukasz" password="lukasz" authorities="ROLE_USER" />
-	    <user name="admin" password="admin" authorities="ROLE_USER" />
-	  </user-service>
-    </authentication-provider>
-  </authentication-manager>
-
-  <beans:bean id="restAuthenticationEntryPoint" class="com.github.springular.server.security.RestAuthenticationEntryPoint" />
-
+  
 </beans:beans>

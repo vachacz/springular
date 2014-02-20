@@ -37,6 +37,7 @@ mainPage.controller('controller.main', ['$scope', '$modal', '$location', '$cooki
 		});
 	};
 
+	/** TODO: extract into jQuery plugin */
 	showLoginFailedPopover = function() {
 		$("#signInButton")
 		.popover({
