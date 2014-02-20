@@ -11,29 +11,6 @@
     <context:annotation-config />
     
     <bean class="com.github.springular.server.configuration.SpringSecurityConfig" />
-    
-    
-	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
-		<property name="messageConverters">
-			<list>
-    			<ref bean="jacksonMessageConverter"/>
-			</list>
-		</property>
-	</bean>
-
-	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerExceptionResolver">
-	    <property name="messageConverters">
-	        <list>
-    			<ref bean="jacksonMessageConverter"/>
-	        </list>
-	    </property>
-	</bean>
-
-    <bean id="jacksonMessageConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"/>
-	
-    <bean id="userController" class="com.github.springular.server.rest.controller.UserController" />
-    <bean id="authController" class="com.github.springular.server.rest.controller.AuthController" />
-    <bean id="paymentController" class="com.github.springular.server.rest.controller.PaymentController" />
-    <bean id="masterdataController" class="com.github.springular.server.rest.controller.MasterdataController" />
+    <bean class="com.github.springular.server.configuration.JsonEndpointConfig" />
 
 </beans>
