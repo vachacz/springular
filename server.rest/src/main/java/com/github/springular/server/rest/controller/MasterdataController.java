@@ -8,10 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.github.springular.server.component.user.Nationality;
-import com.github.springular.server.rest.common.BaseController;
 
 @Controller
-public class MasterdataController extends BaseController {
+public class MasterdataController {
 
 	@RequestMapping("/masterdata/nationalities")
 	public @ResponseBody List<String> getNationalities() {

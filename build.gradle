@@ -46,12 +46,7 @@ project(':server.api') {
 
       compile 'org.aspectj:aspectjrt:1.7.4'
       compile 'org.aspectj:aspectjweaver:1.7.4'
-      compile 'org.springframework:spring-aop:4.0.0.RELEASE'
-
-      compile 'org.apache.tomcat:tomcat-servlet-api:7.0.42'
-      compile 'org.springframework.security:spring-security-core:3.2.0.RELEASE'
-      compile 'org.springframework.security:spring-security-web:3.2.0.RELEASE'
-      compile 'org.springframework.security:spring-security-config:3.2.0.RELEASE'
+      compile 'org.springframework:spring-aop:4.0.1.RELEASE'
    }
 }
 
@@ -69,10 +64,15 @@ project(':server.rest') {
    dependencies {
       compile project(':server.api')
 
-      compile 'org.springframework:spring-webmvc:4.0.0.RELEASE'
+      compile 'org.springframework:spring-webmvc:4.0.1.RELEASE'
 
-      compile 'org.codehaus.jackson:jackson-core-asl:1.9.8'
-      compile 'org.codehaus.jackson:jackson-mapper-asl:1.9.8'
+      compile 'com.fasterxml.jackson.core:jackson-core:2.3.0'
+      compile 'com.fasterxml.jackson.core:jackson-databind:2.3.0'
+
+      compile 'org.apache.tomcat:tomcat-servlet-api:7.0.42'
+      compile 'org.springframework.security:spring-security-core:3.2.0.RELEASE'
+      compile 'org.springframework.security:spring-security-web:3.2.0.RELEASE'
+      compile 'org.springframework.security:spring-security-config:3.2.0.RELEASE'
    }
 
 }

@@ -3,6 +3,7 @@ package com.github.springular.server.rest.common;
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Component;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -12,7 +13,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 import com.github.springular.server.exception.BusinessException;
 
-public class BaseController {
+@Component
+public class GlobalExceptionHandler {
 
     @ResponseBody
     @ExceptionHandler(BusinessException.class)

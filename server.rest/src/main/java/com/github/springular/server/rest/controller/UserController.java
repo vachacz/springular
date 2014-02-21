@@ -11,10 +11,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.github.springular.server.component.user.IUserBCI;
 import com.github.springular.server.component.user.UserDO;
-import com.github.springular.server.rest.common.BaseController;
 
 @Controller
-public class UserController extends BaseController {
+public class UserController {
 
 	@Autowired IUserBCI authBCI;
 	
