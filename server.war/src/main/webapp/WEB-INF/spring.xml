@@ -15,15 +15,12 @@
        http://www.springframework.org/schema/context    
        http://www.springframework.org/schema/context/spring-context-3.2.xsd">
  
-<!-- 
-  <beans:import resource="classpath:server-api-beans.xml" />
-  <beans:import resource="classpath:server-rest-beans.xml" />
-   -->
-  
   <context:annotation-config />
-    
+  
+  <!-- back-end component services -->
   <bean class="com.github.springular.server.configuration.BackendConfiguration" />
 
+  <!-- json end-point configuration -->
   <bean class="com.github.springular.server.configuration.SpringSecurityConfig" />
   <bean class="com.github.springular.server.configuration.JsonEndpointConfig" />
   

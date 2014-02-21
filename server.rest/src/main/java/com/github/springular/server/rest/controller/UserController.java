@@ -11,10 +11,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.github.springular.server.component.user.IUserBCI;
 import com.github.springular.server.component.user.UserDO;
-import com.github.springular.server.rest.common.GlobalExceptionHandler;
 
 @Controller
-public class UserController extends GlobalExceptionHandler {
+public class UserController {
 
 	@Autowired IUserBCI authBCI;
 	
