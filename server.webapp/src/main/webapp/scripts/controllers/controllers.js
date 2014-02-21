@@ -35,6 +35,15 @@ SpringularUser.controller('controller.users', ['$scope', '$modal', '$location', 
         }
       });
     };
+    
+    $scope.deleteUser = function (user) {
+    	user.$delete(function() {
+    		$scope.users.splice( $scope.users.indexOf(user), 1 );
+			$scope.usersTotal--;
+			$scope.computePagedUsers();
+    	});
+    }
+    
 }]);
 
 SpringularUser.controller('controller.modal.user', ['$scope', '$modalInstance', '$modal', '$location', 'RestApiMasterdata', 'RestApiUser', 'user', function($scope, $modalInstance, $modal, $location, RestApiMasterdata, RestApiUser, user) {

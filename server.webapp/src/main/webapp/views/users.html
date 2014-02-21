@@ -3,11 +3,11 @@
   <table class="table table-striped table-condensed" style="width: 360px;">
     <thead>
       <tr>
-        <th style="min-width: 120px;">Login</th>
-        <th style="min-width: 180px;">First name</th>
-        <th style="min-width: 180px;">Last name</th>
+        <th style="min-width: 80px;">Login</th>
+        <th style="min-width: 100px;">First name</th>
+        <th style="min-width: 100px;">Last name</th>
         <th style="min-width: 80px;">Nationality</th>
-        <th></th>
+        <th style="min-width: 100px;"></th>
       </tr>
     </thead>
     <tbody>
@@ -18,7 +18,10 @@
         <td align="center"><img ng-src="img/flag_{{ user.nationality }}.png"></td>
         <td>
           <div class="btn-group btn-group-xs">
-             <button type="button" class="btn btn-primary" ng-click="editUser(user)">Edit</button>
+            <button type="button" class="btn btn-primary" ng-click="editUser(user)">Edit</button>
+          </div>
+          <div class="btn-group btn-group-xs">
+            <button type="button" class="btn btn-primary" ng-click="deleteUser(user)">Delete</button>
           </div>
         </td>
       </tr>

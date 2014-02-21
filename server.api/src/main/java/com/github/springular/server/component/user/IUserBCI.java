@@ -7,5 +7,6 @@ public interface IUserBCI {
 	public List<UserDO> getUsers();
 	
 	public void updateUser(UserDO user);
+  public void deleteUser(String userId);
 	
 }

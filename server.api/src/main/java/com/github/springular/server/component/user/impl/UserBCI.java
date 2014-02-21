@@ -45,6 +45,11 @@ public class UserBCI implements IUserBCI {
 		persistentUser.setLastName(user.getLastName());
 	}
 
+	@Override
+	public void deleteUser(String userId) {
+	  userDataStore.deleteUser(userId);
+	}
+	
 	public static boolean isUpper(String s) {
 		for (char c : s.toCharArray()) {
 			if (!Character.isUpperCase(c))
@@ -52,5 +57,6 @@ public class UserBCI implements IUserBCI {
 		}
 		return true;
 	}
+
 
 }

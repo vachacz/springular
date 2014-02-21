@@ -21,28 +21,28 @@ public class UserDataStore {
 		random = new Random();
 		userDB = new HashMap<String, UserDO>();
 		
-		createUserWithLogin("stoch", Nationality.POLAND);
-		createUserWithLogin("zyla", Nationality.POLAND);
-		createUserWithLogin("ziobro", Nationality.POLAND);
-		createUserWithLogin("hula", Nationality.POLAND);
-		createUserWithLogin("muranka", Nationality.POLAND);
-		createUserWithLogin("kubacki", Nationality.POLAND);
-		createUserWithLogin("biegun", Nationality.POLAND);
-		createUserWithLogin("kot", Nationality.POLAND);
-		createUserWithLogin("zniszczol", Nationality.POLAND);
-		createUserWithLogin("bardal", Nationality.NORWAY);
-		createUserWithLogin("hilde", Nationality.NORWAY);
-		createUserWithLogin("velta", Nationality.NORWAY);
-		createUserWithLogin("stjernen", Nationality.NORWAY);
-		createUserWithLogin("freitag", Nationality.GERMANY);
-		createUserWithLogin("hannawald", Nationality.GERMANY);
-		createUserWithLogin("freund", Nationality.GERMANY);
-		createUserWithLogin("jacobsen", Nationality.NORWAY);
-		createUserWithLogin("fannemel", Nationality.NORWAY);
-		createUserWithLogin("neumayer", Nationality.GERMANY);
-		createUserWithLogin("schmitt", Nationality.GERMANY);
-		createUserWithLogin("wank", Nationality.GERMANY);
-		createUserWithLogin("wellinger", Nationality.GERMANY);
+		createUser("stoch", "Kamil","Stoch", Nationality.POLAND);
+		createUser("zyla", "Piotr","Zyla",Nationality.POLAND);
+		createUser("ziober", "Jan","Ziobro",Nationality.POLAND);
+		createUser("hula", "Stefan","Hula",Nationality.POLAND);
+		createUser("klimek", "Klemens","Muranka",Nationality.POLAND);
+		createUser("kuba", "Dawid","Kubacki",Nationality.POLAND);
+		createUser("biegun", "Krzysztof","Biegun",Nationality.POLAND);
+		createUser("kot", "Maciej","Kot",Nationality.POLAND);
+		createUser("destroy", "Aleksander","Zniszczol",Nationality.POLAND);
+		createUser("bardal", "Anders","Bardal",Nationality.NORWAY);
+		createUser("hilde", "Tom","Hilde",Nationality.NORWAY);
+		createUser("velta", "Rune","Velta",Nationality.NORWAY);
+		createUser("stjernen", "Anders","Stjernen",Nationality.NORWAY);
+		createUser("friday", "Richard","Freitag",Nationality.GERMANY);
+		createUser("hannawald", "Sven","Hannawald",Nationality.GERMANY);
+		createUser("freund", "Severin","Freund",Nationality.GERMANY);
+		createUser("jacobsen", "Anders","Jacobsen",Nationality.NORWAY);
+		createUser("fanny", "Anders","Fannemel",Nationality.NORWAY);
+		createUser("neumayer", "Michael","Neumeyer",Nationality.GERMANY);
+		createUser("schmitt", "Martin","Schmitt",Nationality.GERMANY);
+		createUser("wank", "Andreas","Wank",Nationality.GERMANY);
+		createUser("wellinger", "Andreas","Wellinger",Nationality.GERMANY);
 	}
 	
 	public List<UserDO> getUsers() {
@@ -52,13 +52,17 @@ public class UserDataStore {
 	public UserDO findUser(String id) {
 		return userDB.get(id);
 	}
+
+  public void deleteUser(String userId) {
+    userDB.remove(userId);
+  }
 	
-	private void createUserWithLogin(String login, Nationality nationality) {
+	private void createUser(String login, String firstName, String lastName, Nationality nationality) {
 		UserDO user = new UserDO();
-		user.setId(random.nextInt() + "");
+		user.setId(Math.abs(random.nextInt()) + "");
 		user.setLogin(login);
-		user.setFirstName("firstname_" + login);
-		user.setLastName("lastname_" + login);
+		user.setFirstName(firstName);
+		user.setLastName(lastName);
 		user.setNationality(nationality.code());
 		
 		userDB.put(user.getId(), user);
