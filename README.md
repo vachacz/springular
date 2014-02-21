@@ -6,7 +6,7 @@ Demo application (AngularJS + Spring REST)
 DONE
 ==========
 - project structure
-- Gradle build (
+- Gradle build
   - Eclipse integration via Gradle-Eclipse plugin
   - generation of project EAR (including WAR with Spring rest service, WAR with AngularJS webapp)
 - BACKEND:
@@ -47,6 +47,7 @@ TODO
   - registration
 - logging
 - javascript (+how to structure angular controllers in project)
+- handling of 401 request in Angular
 - more ... TBD?
 
 SETUP
