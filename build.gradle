@@ -47,6 +47,7 @@ project(':server.api') {
       compile 'org.aspectj:aspectjrt:1.7.4'
       compile 'org.aspectj:aspectjweaver:1.7.4'
       compile 'org.springframework:spring-aop:4.0.1.RELEASE'
+      compile 'org.springframework:spring-context:4.0.1.RELEASE'
    }
 }
 

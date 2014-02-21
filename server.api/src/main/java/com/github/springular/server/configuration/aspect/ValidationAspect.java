@@ -1,4 +1,4 @@
-package com.github.springular.server.aspect;
+package com.github.springular.server.configuration.aspect;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
