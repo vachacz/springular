@@ -6,24 +6,36 @@ Demo application (AngularJS + Spring REST)
 DONE
 ==========
 - project structure
-- gradle build (+eclipse integration)
-  - generation of project EAR (inside: WAR with spring rest service, WAR with angular webapp)
-- spring rest service
-  - aspect driven hibernate validator (+ custom validation messages)
-  - GET + POST request samples
-- angular frontend
-  - bootstrap layout (+theme)
-  - angular-animation used for fluent validation messages
+- Gradle build (
+  - Eclipse integration via Gradle-Eclipse plugin
+  - generation of project EAR (including WAR with Spring rest service, WAR with AngularJS webapp)
+- BACKEND:
+  - Spring Framework
+    - java-based configuration
+    - rest service endpoint
+    - cookie based security (+login, +logout, but not yet CSRF safe)
+    - aspect driven Hibernate Validator (+ custom validation messages)
+    - sample GET + POST requests implementation
+- FRONTEND:
+  - AngularJS application
+    - angular-animation used for fluent appearence of validation messages
+    - example custom Angular directive
+  - Bbootstrap layout 
+    - Superhere Theme included `http://bootswatch.com/superhero`
 - functionality
   - list of users with client side paging (based on bootstrap component)
-  - user edit in modal window 
+    - user edition in modal window
+  - login + logout via navbar
+  - list of payments available only for logged in users
 
 TODO
 ==========
 - deploy on cloud
   - including spring profiles for development/deployment (when needed)
-- security (+login, +registration, +cookie handling in rest service)
+- security
   - simple permission system (+role based, +field based?)
+  - token based CSRF resitance
+  - user store provided by backend components
 - datastore (+nosql on cloud?)
   - transaction handling
 - bower, grunt, yo integration (if reasonable)
@@ -32,12 +44,9 @@ TODO
   - client (+jasmine, +karma)
 - domain driven design (if reasonable. not yet desided)
 - funcionality
-  - registration + login
-  - one more page with dummy content (+ some non trivial UI)
-  - field marking after validation error (+background/border or +nice tooltip with validation message)
+  - registration
 - logging
 - javascript (+how to structure angular controllers in project)
-- implement nd-directive for checking current location (http://stackoverflow.com/questions/16199418/how-do-i-implement-the-bootstrap-navbar-active-class-with-angular-js)
 - more ... TBD?
 
 SETUP
