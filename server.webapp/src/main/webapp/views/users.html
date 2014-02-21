@@ -7,7 +7,7 @@
         <th style="min-width: 100px;">First name</th>
         <th style="min-width: 100px;">Last name</th>
         <th style="min-width: 80px;">Nationality</th>
-        <th style="min-width: 100px;"></th>
+        <th style="min-width: 100px;" ng-show="authService.isUserLoggedIn()"></th>
       </tr>
     </thead>
     <tbody>
@@ -16,7 +16,7 @@
         <td>{{ user.firstName }}</td>
         <td>{{ user.lastName }}</td>
         <td align="center"><img ng-src="img/flag_{{ user.nationality }}.png"></td>
-        <td>
+        <td ng-show="authService.isUserLoggedIn()">
           <div class="btn-group btn-group-xs">
             <button type="button" class="btn btn-primary" ng-click="editUser(user)">Edit</button>
           </div>

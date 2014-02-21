@@ -6,7 +6,8 @@ SpringularRest.factory('RestApiPayments', function ($resource) {
 	return $resource('/angular-rest/secured/payment/:id', {id: '@id'});
 });
 
-SpringularRest.factory('AuthService', function ($resource, $http, $q, $cookies) {
+SpringularRest.factory('AuthService', function ($resource, $http, $q, $cookieStore) {
+	var userLoggedIn = $cookieStore.get('userLoggedIn');
 	return {
 		signIn : function(credentials) {
 			var encodedUserNameAndPassword = Base64.encode(credentials.login + ':' + credentials.password);
@@ -15,15 +16,23 @@ SpringularRest.factory('AuthService', function ($resource, $http, $q, $cookies) 
 			var deferred = $q.defer();
 			$http({method: 'POST', url: '/angular-rest/secured/authenticate', headers: {'Authorization': 'Basic ' + encodedUserNameAndPassword}})
 			   .success(function (data, status, headers, config) {
+				   userLoggedIn = true;
+				   $cookieStore.put('userLoggedIn', 'true');
 				   deferred.resolve(true);
 			   })
 			   .error(function (data, status, headers, config) {
+				   userLoggedIn = false;
 				   deferred.resolve(false);
 			   });
 			return deferred.promise;
 		},	
 		signOut : function(credentials) {
 			$http({method: 'GET', url: '/angular-rest/signout'});
+			$cookieStore.remove('userLoggedIn');
+			userLoggedIn = false;
+		},
+		isUserLoggedIn : function() {
+			return userLoggedIn;
 		}
 	}
 });

@@ -12,6 +12,9 @@ var SpringularApp = angular.module('springular.app', [
    $routeProvider.when('/users', {templateUrl: 'views/users.html', controller: 'controller.users'});
    $routeProvider.when('/todo', {templateUrl: 'views/todo.html'});
    $routeProvider.when('/payments', {templateUrl: 'views/payments.html', controller: 'controller.payments'});
+})
+.run(function ($rootScope, AuthService) {
+    $rootScope.authService = AuthService;
 });
 
 var SpringularRest = angular.module('springular.rest', ['ngResource', 'ngCookies']);

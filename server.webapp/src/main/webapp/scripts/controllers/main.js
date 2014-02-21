@@ -1,8 +1,6 @@
 var mainPage = angular.module('module.main', [ 'springular.rest' ]);
-mainPage.controller('controller.main', ['$scope', '$modal', '$location', '$cookieStore', 'AuthService', function ($scope, $modal, $location, $cookieStore, AuthService) {
+mainPage.controller('controller.main', ['$scope', '$modal', '$location', 'AuthService', function ($scope, $modal, $location, AuthService) {
 
-	$scope.userLoggedIn = $cookieStore.get('userLoggedIn');
-	
 	$scope.credentials = {
 		login : "",
 		password : ""
@@ -10,10 +8,7 @@ mainPage.controller('controller.main', ['$scope', '$modal', '$location', '$cooki
 	
 	$scope.signIn = function () {
 		AuthService.signIn($scope.credentials).then(function (loginResult) {
-			$scope.userLoggedIn = loginResult;
-			if (loginResult) {
-				$cookieStore.put('userLoggedIn', 'true');
-			} else {
+			if (!loginResult) {
 				showLoginFailedPopover();
 			}
 		});
@@ -21,12 +16,10 @@ mainPage.controller('controller.main', ['$scope', '$modal', '$location', '$cooki
 	
 	$scope.signOut = function () {
 		AuthService.signOut();
-		$scope.userLoggedIn = false;
-		$cookieStore.remove('userLoggedIn');
-		$scope.credentials = {
-			login : "",
-			password : ""
-		};
+		
+		$scope.credentials.login = "";
+		$scope.credentials.password = "";
+		
 		$location.path( "/" );
 	};
 	
