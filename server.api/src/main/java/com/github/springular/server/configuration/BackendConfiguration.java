@@ -10,7 +10,6 @@ import org.springframework.context.annotation.FilterType;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
-import com.github.springular.server.component.user.impl.UserBCI;
 import com.github.springular.server.configuration.aspect.ValidationAspect;
 
 @Configuration
@@ -22,11 +21,6 @@ import com.github.springular.server.configuration.aspect.ValidationAspect;
 })
 public class BackendConfiguration {
 
-  @Bean
-  public UserBCI userBCI() {
-    return new UserBCI();
-  }
-  
   @Bean
   public ValidationAspect validationAspect() {
     return new ValidationAspect();

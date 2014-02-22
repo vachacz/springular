@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
+import com.github.springular.server.configuration.auth.UserAuthenticationProvider;
 import com.github.springular.server.configuration.rest.RestAuthenticationEntryPoint;
 
 @Configuration
@@ -16,20 +17,22 @@ import com.github.springular.server.configuration.rest.RestAuthenticationEntryPo
 public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 	
   @Autowired private RestAuthenticationEntryPoint restAuthenticationEntryPoint;
+  @Autowired private UserAuthenticationProvider userAuthenticationProvider;
   
   @Bean
   public RestAuthenticationEntryPoint restAuthenticationEntryPoint() {
     return new RestAuthenticationEntryPoint();
   }
   
+  @Bean
+  public UserAuthenticationProvider userAuthenticationProvider() {
+    return new UserAuthenticationProvider();
+  }
+  
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-		auth
-			.inMemoryAuthentication()
-				.withUser("user").password("user").authorities("USER")
-			.and()
-			  .withUser("admin").password("admin").authorities("USER");
-	  }
+		auth.userDetailsService(userAuthenticationProvider);
+  }
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
