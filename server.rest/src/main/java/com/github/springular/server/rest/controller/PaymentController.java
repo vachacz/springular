@@ -14,27 +14,27 @@ public class PaymentController {
     @ResponseBody
     @RequestMapping(value = "/secured/payment", method = RequestMethod.GET)
     public List<Payment> getPayments() {
-        return Arrays.asList(
-        	payment("carrots", "10", "3.40$"),
-        	payment("tomatos", "20", "1.20$"),
-        	payment("potatos", "34", "0.10$"),
-        	payment("strawberies", "12", "3.90$")
-        ); 
+      return Arrays.asList(
+      	payment("carrots", "10", "3.40$"),
+      	payment("tomatos", "20", "1.20$"),
+      	payment("potatos", "34", "0.10$"),
+      	payment("strawberies", "12", "3.90$")
+      ); 
     }
 	
     public static Payment payment(String name, String quantity, String price) {
-    	Payment payment = new Payment();
-    	payment.setName(name);
-    	payment.setQuantity(quantity);
-    	payment.setPrice(price);
+    Payment payment = new Payment();
+    payment.setName(name);
+    payment.setQuantity(quantity);
+    payment.setPrice(price);
 		return payment;
 	}
     
-    public static class Payment {
+  public static class Payment {
     	
-    	private String name;
-    	private String quantity;
-    	private String price;
+    private String name;
+    private String quantity;
+    private String price;
     	
 		public String getName() {
 			return name;
@@ -54,6 +54,5 @@ public class PaymentController {
 		public void setPrice(String price) {
 			this.price = price;
 		}
-    }
-    
+  }
 }
