@@ -1,5 +1,5 @@
-SpringularRest.factory('RestApiUser', function ($resource) {
-	return $resource('/angular-rest/user/:id', {id: '@id'});
+SpringularRest.factory('RestApiEmployee', function ($resource) {
+	return $resource('/angular-rest/employee/:id', {id: '@id'});
 });
 
 SpringularRest.factory('RestApiPayments', function ($resource) {

@@ -3,11 +3,11 @@
 	<form class="form-horizontal" role="form">
 		<div class="form-group">
 	        <div class="col-sm-offset-3 col-sm-8">
-	            <h3>Edit user</h3>
+	            <h3>Edit employee</h3>
 	        </div>
 	    </div>
 
-	    <div id="userErrors" class="alert alert-dismissable alert-danger animating" ng-if="errorMessages.length > 0">
+	    <div id="employeeErrors" class="alert alert-dismissable alert-danger animating" ng-if="errorMessages.length > 0">
 		   <p ng-repeat="message in errorMessages">
               <strong>ERROR:</strong> {{ message }}
 		   </p>
@@ -17,7 +17,7 @@
 			<label for="inputLogin" class="col-sm-3 control-label">Login</label>
 			<div class="col-sm-8">
 				<input type="text" class="form-control" id="inputLogin"
-					placeholder="Login" ng-model="user.login">
+					placeholder="Login" ng-model="employee.login">
 			</div>
 		</div>
 		
@@ -25,7 +25,7 @@
 			<label for="inputFirstName" class="col-sm-3 control-label">First Name</label>
 			<div class="col-sm-8">
 				<input type="text" class="form-control" id="inputFirstName"
-					placeholder="First Name" ng-model="user.firstName">
+					placeholder="First Name" ng-model="employee.firstName">
 			</div>
 		</div>
 		
@@ -33,22 +33,22 @@
 			<label for="inputLastName" class="col-sm-3 control-label">Last Name</label>
 			<div class="col-sm-8">
 				<input type="text" class="form-control" id="inputLastName"
-					placeholder="Last Name" ng-model="user.lastName">
+					placeholder="Last Name" ng-model="employee.lastName">
 			</div>
 		</div>
 		
 		<div class="form-group">
 			<label for="inputNationality" class="col-sm-3 control-label">Nationality</label>
 			<div class="col-sm-8">
-	    		<select class="form-control" ng-model="user.nationality" ng-options="nationality for nationality in nationalities">
+	    		<select class="form-control" ng-model="employee.nationality" ng-options="nationality for nationality in nationalities">
                 </select>
 			</div>
 		</div>
 		
 		<div class="form-group">
 			<div class="col-sm-offset-3 col-sm-8">
-				<button type="submit" class="btn btn-primary" ng-click="saveUser(user)">Save</button>
-				<button type="submit" class="btn btn-primary" ng-click="closeUser()">Cancel</button>
+				<button type="submit" class="btn btn-primary" ng-click="saveEmployee(employee)">Save</button>
+				<button type="submit" class="btn btn-primary" ng-click="closeEmployee()">Cancel</button>
 			</div>	
 		</div>
 	</form>

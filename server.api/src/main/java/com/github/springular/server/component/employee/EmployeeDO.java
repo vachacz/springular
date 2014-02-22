@@ -1,9 +1,9 @@
-package com.github.springular.server.component.user;
+package com.github.springular.server.component.employee;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
-public class UserDO {
+public class EmployeeDO {
 
 	@NotEmpty(message = "{User.NotEmpty.id}")
 	private String id;

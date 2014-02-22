@@ -1,5 +1,5 @@
 <div class="span6">
-  <pagination direction-links="true" total-items="usersTotal" page="usersPage" on-select-page="usersPageSet(page)" items-per-page="usersPerPage" ng-show="usersTotal > usersPerPage"></pagination>
+  <pagination direction-links="true" total-items="employeesTotal" page="employeesPage" on-select-page="employeesPageSet(page)" items-per-page="employeesPerPage" ng-show="employeesTotal > employeesPerPage"></pagination>
   <table class="table table-striped table-condensed" style="width: 360px;">
     <thead>
       <tr>
@@ -11,17 +11,17 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="user in usersPagedList">
-        <td>{{ user.login }}</td>
-        <td>{{ user.firstName }}</td>
-        <td>{{ user.lastName }}</td>
-        <td align="center"><img ng-src="img/flag_{{ user.nationality }}.png"></td>
+      <tr ng-repeat="employee in employeesPagedList">
+        <td>{{ employee.login }}</td>
+        <td>{{ employee.firstName }}</td>
+        <td>{{ employee.lastName }}</td>
+        <td align="center"><img ng-src="img/flag_{{ employee.nationality }}.png"></td>
         <td ng-show="authService.isUserLoggedIn()">
           <div class="btn-group btn-group-xs">
-            <button type="button" class="btn btn-primary" ng-click="editUser(user)">Edit</button>
+            <button type="button" class="btn btn-primary" ng-click="editEmployee(employee)">Edit</button>
           </div>
           <div class="btn-group btn-group-xs">
-            <button type="button" class="btn btn-primary" ng-click="deleteUser(user)">Delete</button>
+            <button type="button" class="btn btn-primary" ng-click="deleteEmployee(employee)">Delete</button>
           </div>
         </td>
       </tr>

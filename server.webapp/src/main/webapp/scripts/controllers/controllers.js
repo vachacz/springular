@@ -1,70 +1,70 @@
-var SpringularUser = angular.module('module.userAdministration', [ 'springular.rest', 'ui.bootstrap' ]);
+var SpringularEmployee = angular.module('module.employeeAdministration', [ 'springular.rest', 'ui.bootstrap' ]);
 
-SpringularUser.controller('controller.users', ['$scope', '$modal', '$location', '$http', 'RestApiUser', function ($scope, $modal, $location, $http, RestApiUser) {
+SpringularEmployee.controller('controller.employees', ['$scope', '$modal', '$location', '$http', 'RestApiEmployee', function ($scope, $modal, $location, $http, RestApiEmployee) {
 
-	$scope.usersPage = 1;
-	$scope.usersPerPage = 10;
-	$scope.usersPagedList = [];
+	$scope.employeesPage = 1;
+	$scope.employeesPerPage = 10;
+	$scope.employeesPagedList = [];
 	
-	RestApiUser.query({}, function (users) {
-        $scope.users = users;
-        $scope.usersTotal = users.length;
-        $scope.computePagedUsers();
+	RestApiEmployee.query({}, function (employees) {
+        $scope.employees = employees;
+        $scope.employeesTotal = employees.length;
+        $scope.computePagedEmployees();
     });
 	
-	$scope.usersPageSet = function (pageNumber) {
-	    $scope.usersPage = pageNumber;
-	    $scope.computePagedUsers();
+	$scope.employeesPageSet = function (pageNumber) {
+	    $scope.employeesPage = pageNumber;
+	    $scope.computePagedEmployees();
 	};
 	
-	$scope.computePagedUsers = function () {
-		var begin = (($scope.usersPage - 1) * $scope.usersPerPage), 
-	    end   = begin + $scope.usersPerPage;
+	$scope.computePagedEmployees = function () {
+		var begin = (($scope.employeesPage - 1) * $scope.employeesPerPage), 
+	    end   = begin + $scope.employeesPerPage;
 	    
-		$scope.usersPagedList = $scope.users.slice(begin, end);
+		$scope.employeesPagedList = $scope.employees.slice(begin, end);
     };
 	
-    $scope.editUser = function ($user) {
+    $scope.editEmployee = function ($employee) {
       var modalInstance = $modal.open({
-        templateUrl: 'views/editUser.html',
-        controller: 'controller.modal.user',
+        templateUrl: 'views/employeeEdit.html',
+        controller: 'controller.modal.employee',
         resolve: {
-          user: function () {
-            return $user;
+          employee: function () {
+            return $employee;
           }
         }
       });
     };
     
-    $scope.deleteUser = function (user) {
-    	user.$delete(function() {
-    		$scope.users.splice( $scope.users.indexOf(user), 1 );
-			$scope.usersTotal--;
-			$scope.computePagedUsers();
+    $scope.deleteEmployee = function (employee) {
+    	employee.$delete(function() {
+    		$scope.employees.splice( $scope.employees.indexOf(employee), 1 );
+			$scope.employeesTotal--;
+			$scope.computePagedEmployees();
     	});
     }
     
 }]);
 
-SpringularUser.controller('controller.modal.user', ['$scope', '$modalInstance', '$modal', '$location', 'RestApiMasterdata', 'RestApiUser', 'user', function($scope, $modalInstance, $modal, $location, RestApiMasterdata, RestApiUser, user) {
+SpringularEmployee.controller('controller.modal.employee', ['$scope', '$modalInstance', '$modal', '$location', 'RestApiMasterdata', 'RestApiEmployee', 'employee', function($scope, $modalInstance, $modal, $location, RestApiMasterdata, RestApiEmployee, employee) {
 
-    $scope.user = user;
+    $scope.employee = employee;
     $scope.errorMessages = [];
     
     RestApiMasterdata.getNationalities().success(function(result) {
     	$scope.nationalities = result;
     });
     
-	$scope.saveUser = function($user) {
-		$user.$save(function() {
+	$scope.saveEmployee = function($employee) {
+		$employee.$save(function() {
 			$modalInstance.close();
-			$location.path( "/users" );
+			$location.path( "/employees" );
 		}, function(response) {
 			$scope.errorMessages = response.data.messages;
 		});
 	};
 
-    $scope.closeUser = function () {
+    $scope.closeEmployee = function () {
     	$modalInstance.dismiss('cancel');
     };
 }]);

@@ -1,4 +1,4 @@
-package com.github.springular.server.component.user;
+package com.github.springular.server.component.employee;
 
 public enum Nationality {
 
