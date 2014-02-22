@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.github.springular.server.component.employee.IEmployeeBCI;
 import com.github.springular.server.component.employee.EmployeeDO;
+import com.github.springular.server.component.employee.SalaryDO;
 import com.github.springular.server.component.employee.impl.dao.EmployeeDataStore;
 import com.github.springular.server.exception.BusinessException;
 import com.github.springular.server.exception.BusinessException.Builder;
@@ -57,6 +58,11 @@ public class EmployeeBCI implements IEmployeeBCI {
 		}
 		return true;
 	}
+
+  @Override
+  public List<SalaryDO> getSalaries() {
+    return employeeDataStore.getSalaries();
+  }
 
 
 }

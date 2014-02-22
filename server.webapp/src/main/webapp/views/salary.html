@@ -2,17 +2,20 @@
   <table class="table table-striped table-condensed" style="width: 360px;">
     <thead>
       <tr>
-        <th style="min-width: 120px;">Name</th>
-        <th style="min-width: 180px;">Quantity</th>
-        <th style="min-width: 180px;">Price</th>
-        <th></th>
+        <th style="min-width: 120px;">First name</th>
+        <th style="min-width: 120px;">Last name</th>
+        <th style="min-width: 60px;">Year</th>
+        <th style="min-width: 60px;">Month</th>
+        <th style="min-width: 120px;">Amount</th>
       </tr>
     </thead>
     <tbody>
       <tr ng-repeat="salary in salaries">
-        <td>{{ salary.name }}</td>
-        <td>{{ salary.quantity }}</td>
-        <td>{{ salary.price }}</td>
+        <td>{{ salary.employeeFirstName }}</td>
+        <td>{{ salary.employeeLastName }}</td>
+        <td>{{ salary.year }}</td>
+        <td>{{ salary.month }}</td>
+        <td>{{ salary.amount }}.00 $</td>
       </tr>
     </tbody>
   </table>
