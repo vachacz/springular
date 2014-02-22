@@ -14,7 +14,7 @@
     <script src="scripts/directives/directives.js"></script>
     <script src="scripts/services/services.js"></script>
     <script src="scripts/controllers/main.js"></script>
-    <script src="scripts/controllers/payments.js"></script>
+    <script src="scripts/controllers/salary.js"></script>
     <script src="scripts/controllers/controllers.js"></script>
     
     <link href="css/custom.css" rel="stylesheet">
@@ -38,9 +38,9 @@
 	
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav">
-	        <li activate-on path="/employees"><a href="#/employees">Employees</a></li>
+	        <li activate-on path="/employees"><a href="#/employees">Employee</a></li>
 	        <li activate-on path="/todo"><a href="#/todo">ToDo</a></li>
-	        <li activate-on path="/payments" ng-if="authService.isUserLoggedIn()"><a href="#/payments">Payments</a></li>
+	        <li activate-on path="/salary" ng-if="authService.isUserLoggedIn()"><a href="#/salary">Salary</a></li>
 	      </ul>
 	      
           <form class="navbar-form navbar-right" role="login">

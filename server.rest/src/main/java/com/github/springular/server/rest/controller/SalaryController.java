@@ -9,28 +9,28 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class PaymentController {
+public class SalaryController {
 
     @ResponseBody
-    @RequestMapping(value = "/secured/payment", method = RequestMethod.GET)
-    public List<Payment> getPayments() {
+    @RequestMapping(value = "/secured/salary", method = RequestMethod.GET)
+    public List<Salary> getSalaries() {
       return Arrays.asList(
-      	payment("carrots", "10", "3.40$"),
-      	payment("tomatos", "20", "1.20$"),
-      	payment("potatos", "34", "0.10$"),
-      	payment("strawberies", "12", "3.90$")
+      	salary("carrots", "10", "3.40$"),
+      	salary("tomatos", "20", "1.20$"),
+      	salary("potatos", "34", "0.10$"),
+      	salary("strawberies", "12", "3.90$")
       ); 
     }
 	
-    public static Payment payment(String name, String quantity, String price) {
-    Payment payment = new Payment();
-    payment.setName(name);
-    payment.setQuantity(quantity);
-    payment.setPrice(price);
-		return payment;
+    public static Salary salary(String name, String quantity, String price) {
+    Salary salary = new Salary();
+    salary.setName(name);
+    salary.setQuantity(quantity);
+    salary.setPrice(price);
+		return salary;
 	}
     
-  public static class Payment {
+  public static class Salary {
     	
     private String name;
     private String quantity;

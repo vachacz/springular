@@ -3,15 +3,15 @@
 var SpringularApp = angular.module('springular.app', [
    'springular.rest',
    'module.main',
-   'module.payments',
+   'module.salary',
    'module.employeeAdministration',
    'ngRoute',
    'ngAnimate',
    ])
 .config(function ($routeProvider, $httpProvider) {
    $routeProvider.when('/employees', {templateUrl: 'views/employees.html', controller: 'controller.employees'});
-   $routeProvider.when('/todo', {templateUrl: 'views/todo.html'});
-   $routeProvider.when('/payments', {templateUrl: 'views/payments.html', controller: 'controller.payments'});
+   $routeProvider.when('/todo',      {templateUrl: 'views/todo.html'});
+   $routeProvider.when('/salary',    {templateUrl: 'views/salary.html', controller: 'controller.salary'});
 })
 .run(function ($rootScope, AuthService) {
     $rootScope.authService = AuthService;
