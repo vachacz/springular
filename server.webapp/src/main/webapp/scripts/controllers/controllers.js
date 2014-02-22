@@ -1,28 +1,28 @@
 var SpringularEmployee = angular.module('module.employeeAdministration', [ 'springular.rest', 'ui.bootstrap' ]);
 
-SpringularEmployee.controller('controller.employees', ['$scope', '$modal', '$location', '$http', 'RestApiEmployee', function ($scope, $modal, $location, $http, RestApiEmployee) {
+SpringularEmployee.controller('controller.employees', ['$scope', '$modal', '$location', '$http', 'RestApiEmployee', 'filterFilter', function ($scope, $modal, $location, $http, RestApiEmployee, filterFilter) {
 
 	$scope.employeesPage = 1;
 	$scope.employeesPerPage = 10;
-	$scope.employeesPagedList = [];
+	$scope.employeesFilteredList = [];
+	
+	$scope.filterCriteria = { login : "", firstName : "", lastName : "" };
 	
 	RestApiEmployee.query({}, function (employees) {
         $scope.employees = employees;
+        $scope.employeesFilteredList = employees;
         $scope.employeesTotal = employees.length;
-        $scope.computePagedEmployees();
+        
+        $scope.$watch('filterCriteria', function(newCriteria) {  
+        	$scope.employeesFilteredList = 
+        		filterFilter($scope.employees, { 
+        			login:     $scope.filterCriteria.login, 
+        			firstName: $scope.filterCriteria.firstName,
+        			lastName:  $scope.filterCriteria.lastName 
+        		});
+        	$scope.employeesTotal = $scope.employeesFilteredList.length;  
+        }, true)
     });
-	
-	$scope.employeesPageSet = function (pageNumber) {
-	    $scope.employeesPage = pageNumber;
-	    $scope.computePagedEmployees();
-	};
-	
-	$scope.computePagedEmployees = function () {
-		var begin = (($scope.employeesPage - 1) * $scope.employeesPerPage), 
-	    end   = begin + $scope.employeesPerPage;
-	    
-		$scope.employeesPagedList = $scope.employees.slice(begin, end);
-    };
 	
     $scope.editEmployee = function ($employee) {
       var modalInstance = $modal.open({
