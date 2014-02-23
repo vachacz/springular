@@ -10,16 +10,17 @@ DONE
   - Eclipse integration via Gradle-Eclipse plugin
   - generation of project EAR (including WAR with Spring rest service, WAR with AngularJS webapp)
 - BACKEND:
-  - Spring Framework
+  - Spring Framework (4.0.1)
     - java-based configuration
     - rest service endpoint
     - cookie based security (+login, +logout, but not yet CSRF safe)
     - aspect driven Hibernate Validator (+ custom validation messages)
     - sample GET + POST requests implementation
 - FRONTEND:
-  - AngularJS application
+  - AngularJS application (1.2)
     - angular-animation used for fluent appearence of validation messages
     - example custom Angular directive
+    - table with client side filter|order|paging
   - Bbootstrap layout 
     - Superhere Theme included `http://bootswatch.com/superhero`
 - functionality
