@@ -2,10 +2,10 @@
   <table class="table table-striped table-condensed" style="width: 360px;">
     <thead>
       <tr>
-        <th style="min-width: 80px;">Login</th>
-        <th style="min-width: 100px;">First name</th>
-        <th style="min-width: 100px;">Last name</th>
-        <th style="min-width: 80px;">Nationality</th>
+        <th style="min-width: 80px;"><a href="" ng-click="employeePredicate = 'login'">Login</a></th>
+        <th style="min-width: 100px;"><a href="" ng-click="employeePredicate = 'firstName'">First name</a></th>
+        <th style="min-width: 100px;"><a href="" ng-click="employeePredicate = 'lastName'">Last name</a></th>
+        <th style="min-width: 80px;"><a href="" ng-click="employeePredicate = 'nationality'">Nationality</a></th>
         <th style="min-width: 100px;" ng-show="authService.isUserLoggedIn()"></th>
       </tr>
     </thead>
@@ -18,7 +18,7 @@
       	<td></td>
       </tr>
       
-      <tr ng-repeat="employee in employeesFilteredList | startFrom:(employeesPage-1)*employeesPerPage | limitTo:employeesPerPage">
+      <tr ng-repeat="employee in employeesFilteredList | orderBy:employeePredicate | startFrom:(employeesPage-1)*employeesPerPage | limitTo:employeesPerPage">
         <td>{{ employee.login }}</td>
         <td>{{ employee.firstName }}</td>
         <td>{{ employee.lastName }}</td>
