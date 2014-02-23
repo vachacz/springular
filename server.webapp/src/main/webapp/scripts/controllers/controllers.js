@@ -2,6 +2,9 @@ var SpringularEmployee = angular.module('module.employeeAdministration', [ 'spri
 
 SpringularEmployee.controller('controller.employees', ['$scope', '$modal', '$location', '$http', 'RestApiEmployee', 'filterFilter', function ($scope, $modal, $location, $http, RestApiEmployee, filterFilter) {
 
+	$scope.employeeOrderReverse = false; 
+	$scope.employeeOrderPredicate = '';
+	
 	$scope.employeesPage = 1;
 	$scope.employeesPerPage = 10;
 	$scope.employeesFilteredList = [];
@@ -23,6 +26,22 @@ SpringularEmployee.controller('controller.employees', ['$scope', '$modal', '$loc
         	$scope.employeesTotal = $scope.employeesFilteredList.length;  
         }, true)
     });
+	
+	$scope.sortEmployees = function(sortAttributeName) {
+		if (sortAttributeName != $scope.employeeOrderPredicate) {
+			$scope.employeeOrderReverse = false;
+		} else {
+			$scope.employeeOrderReverse = !$scope.employeeOrderReverse;
+		}
+		$scope.employeeOrderPredicate = sortAttributeName;
+	}
+	
+	$scope.sortClass = function(sortAttributeName) {
+		if ($scope.employeeOrderPredicate == sortAttributeName) {
+			return $scope.employeeOrderReverse == false ? 'sort-false' : 'sort-true';
+		}
+		return '';
+	}
 	
     $scope.editEmployee = function ($employee) {
       var modalInstance = $modal.open({

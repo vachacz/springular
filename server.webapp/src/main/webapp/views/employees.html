@@ -2,23 +2,24 @@
   <table class="table table-striped table-condensed" style="width: 360px;">
     <thead>
       <tr>
-        <th style="min-width: 80px;"><a href="" ng-click="employeePredicate = 'login'">Login</a></th>
-        <th style="min-width: 100px;"><a href="" ng-click="employeePredicate = 'firstName'">First name</a></th>
-        <th style="min-width: 100px;"><a href="" ng-click="employeePredicate = 'lastName'">Last name</a></th>
-        <th style="min-width: 80px;"><a href="" ng-click="employeePredicate = 'nationality'">Nationality</a></th>
+      <!-- ng-click="employeePredicate = 'login'" -->
+        <th style="min-width: 80px;"  ng-class="sortClass('login')"><a href=""      ng-click="sortEmployees('login')">Login</a></th>
+        <th style="min-width: 100px;" ng-class="sortClass('firstName')"><a href=""  ng-click="sortEmployees('firstName')">First name</a></th>
+        <th style="min-width: 100px;" ng-class="sortClass('lastName')"><a href=""   ng-click="sortEmployees('lastName')">Last name</a></th>
+        <th style="min-width: 80px;"  ng-class="sortClass('nationality')"><a href="" ng-click="sortEmployees('nationality')">Nationality</a></th>
         <th style="min-width: 100px;" ng-show="authService.isUserLoggedIn()"></th>
       </tr>
     </thead>
     <tbody>
       <tr>
-      	<td><input type="text" ng-model="filterCriteria.login"></td>
-      	<td><input type="text" ng-model="filterCriteria.firstName"></td>
-      	<td><input type="text" ng-model="filterCriteria.lastName"></td>
+      	<td><input type="text" ng-model="filterCriteria.login" class="compact-filter"></td>
+      	<td><input type="text" ng-model="filterCriteria.firstName" class="compact-filter"></td>
+      	<td><input type="text" ng-model="filterCriteria.lastName" class="compact-filter"></td>
       	<td></td>
       	<td></td>
       </tr>
       
-      <tr ng-repeat="employee in employeesFilteredList | orderBy:employeePredicate | startFrom:(employeesPage-1)*employeesPerPage | limitTo:employeesPerPage">
+      <tr ng-repeat="employee in employeesFilteredList | orderBy:employeeOrderPredicate:employeeOrderReverse | startFrom:(employeesPage-1)*employeesPerPage | limitTo:employeesPerPage">
         <td>{{ employee.login }}</td>
         <td>{{ employee.firstName }}</td>
         <td>{{ employee.lastName }}</td>
