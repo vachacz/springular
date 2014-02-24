@@ -50,8 +50,8 @@ public class EmployeeDataStore {
 		for (String employeeId : employeeDB.keySet()) {
 		  EmployeeDO employeeDO = employeeDB.get(employeeId);
 		  
-		  for (int year = 2008; year <= 2014; year++) {
-		    for (int month = 1; month <= 12; month++) {
+		  for (int year = 2013; year <= 2014; year++) {
+		    for (int month = 1; month <= 4; month++) {
 		      salary(employeeDO, year, month, 1000 + random.nextInt(1000));
 		    }
 		  }

@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface IEmployeeBCI {
 
-  public List<SalaryDO> getSalaries();
+  public List<SalaryDO> getSalaries(SalaryQueryCriteriaDO criteria);
 	public List<EmployeeDO> getEmployees();
 	
 	public void updateEmployee(EmployeeDO employee);

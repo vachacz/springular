@@ -38,6 +38,13 @@
     opacity: 0;
 }
 
+.highlight {
+	padding: 9px 14px;
+	margin-bottom: 14px;
+	border-radius: 4px;
+	background-color: rgb(78, 93, 108);
+}
+
 .compact-form {
 	display: block;
 	width: 130px;

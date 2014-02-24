@@ -1,5 +1,6 @@
 package com.github.springular.server.component.emploee.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.github.springular.server.component.employee.IEmployeeBCI;
 import com.github.springular.server.component.employee.EmployeeDO;
 import com.github.springular.server.component.employee.SalaryDO;
+import com.github.springular.server.component.employee.SalaryQueryCriteriaDO;
 import com.github.springular.server.component.employee.impl.dao.EmployeeDataStore;
 import com.github.springular.server.exception.BusinessException;
 import com.github.springular.server.exception.BusinessException.Builder;
@@ -60,8 +62,22 @@ public class EmployeeBCI implements IEmployeeBCI {
 	}
 
   @Override
-  public List<SalaryDO> getSalaries() {
-    return employeeDataStore.getSalaries();
+  public List<SalaryDO> getSalaries(SalaryQueryCriteriaDO criteria) {
+    List<SalaryDO> result = new ArrayList<SalaryDO>();
+    
+    List<SalaryDO> salaries = employeeDataStore.getSalaries();
+    for (SalaryDO salaryDO : salaries) {
+      
+      if (criteria.matchesFirstName(salaryDO.getEmployeeFirstName())
+          && criteria.matchesLastName(salaryDO.getEmployeeLastName())
+          && criteria.matchesYear(salaryDO.getYear())
+          && criteria.matchesMonth(salaryDO.getMonth())
+        ) {
+        result.add(salaryDO);
+      }
+    }
+    
+    return result;
   }
 
 

@@ -2,8 +2,10 @@ SpringularRest.factory('RestApiEmployee', function ($resource) {
 	return $resource('/angular-rest/employee/:id', {id: '@id'});
 });
 
-SpringularRest.factory('RestApiSalary', function ($resource) {
-	return $resource('/angular-rest/secured/salary/:id', {id: '@id'});
+SpringularRest.factory('RestApiSalary', function ($http) {
+	return {
+	    'query' : function(criteria) { return $http({ url:'/angular-rest/secured/salary', method: 'POST', data: criteria }); }
+    }
 });
 
 SpringularRest.factory('AuthService', function ($resource, $http, $q, $cookieStore) {

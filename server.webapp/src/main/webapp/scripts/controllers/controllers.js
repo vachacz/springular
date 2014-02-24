@@ -59,7 +59,6 @@ SpringularEmployee.controller('controller.employees', ['$scope', '$modal', '$loc
     	employee.$delete(function() {
     		$scope.employees.splice( $scope.employees.indexOf(employee), 1 );
 			$scope.employeesTotal--;
-			$scope.computePagedEmployees();
     	});
     }
     
