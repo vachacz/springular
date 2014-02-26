@@ -7,7 +7,7 @@
         <th style="min-width: 100px;" ng-class="sortClass('firstName')"><a href=""  ng-click="sortEmployees('firstName')">First name</a></th>
         <th style="min-width: 100px;" ng-class="sortClass('lastName')"><a href=""   ng-click="sortEmployees('lastName')">Last name</a></th>
         <th style="min-width: 80px;"  ng-class="sortClass('nationality')"><a href="" ng-click="sortEmployees('nationality')">Nationality</a></th>
-        <th style="min-width: 100px;" ng-show="authService.isUserLoggedIn()"></th>
+        <th style="min-width: 160px;" ng-show="authService.isUserLoggedIn()"></th>
       </tr>
     </thead>
     <tbody>
@@ -30,6 +30,9 @@
           </div>
           <div class="btn-group btn-group-xs">
             <button type="button" class="btn btn-primary" ng-click="deleteEmployee(employee)">Delete</button>
+          </div>
+          <div class="btn-group btn-group-xs">
+            <button type="button" class="btn btn-primary" ng-click="showSalaries(employee)">Salaries</button>
           </div>
         </td>
       </tr>

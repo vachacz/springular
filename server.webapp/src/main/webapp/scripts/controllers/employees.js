@@ -62,6 +62,10 @@ SpringularEmployee.controller('controller.employees', ['$scope', '$modal', '$loc
     	});
     }
     
+    $scope.showSalaries = function (employee) {
+    	$location.search({ firstName: employee.firstName, lastName: employee.lastName }).path( "/salary" );
+    }
+    
 }]);
 
 SpringularEmployee.controller('controller.modal.employee', ['$scope', '$modalInstance', '$modal', '$location', 'RestApiMasterdata', 'RestApiEmployee', 'employee', function($scope, $modalInstance, $modal, $location, RestApiMasterdata, RestApiEmployee, employee) {

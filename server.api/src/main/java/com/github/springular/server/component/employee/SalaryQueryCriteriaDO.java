@@ -43,14 +43,14 @@ public class SalaryQueryCriteriaDO {
   }
   
   public boolean matchesFirstName(String firstNameToExamine) {
-    if (employeeFirstName.trim().length() == 0) {
+    if (employeeFirstName == null || employeeFirstName.trim().length() == 0) {
       return true;
     }
     return firstNameToExamine.startsWith(employeeFirstName);
   }
   
   public boolean matchesLastName(String lastNameToExamine) {
-    if (employeeLastName.trim().length() == 0) {
+    if (employeeLastName == null || employeeLastName.trim().length() == 0) {
       return true;
     }
     return lastNameToExamine.startsWith(employeeLastName);

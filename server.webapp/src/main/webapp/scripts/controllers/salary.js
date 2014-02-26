@@ -3,6 +3,9 @@ mainPage.controller('controller.salary', ['$scope', '$modal', '$location', 'Rest
 
 	$scope.searchPopoverVisible = false;
 	$scope.filterCriteria = { employeeFirstName : "", employeeLastName : "", year : "", month : "", amount : "" };
+
+	$scope.filterCriteria.employeeFirstName = $location.search().firstName;
+	$scope.filterCriteria.employeeLastName = $location.search().lastName;
 	
 	RestApiSalary.query($scope.filterCriteria).success(function (salaries) {
 		$scope.salaries = salaries;
