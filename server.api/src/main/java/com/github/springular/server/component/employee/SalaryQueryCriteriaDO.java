@@ -8,6 +8,10 @@ public class SalaryQueryCriteriaDO {
   private Integer month;
   private Integer year;
   
+  private Integer itemsProPage;
+  private Integer pageNumber;
+  private String orderType;
+  
   public String getAmount() {
     return amount;
   }
@@ -39,18 +43,18 @@ public class SalaryQueryCriteriaDO {
     this.year = year;
   }
   
-  public boolean matchesFirstName(String pattern) {
+  public boolean matchesFirstName(String firstNameToExamine) {
     if (employeeFirstName.trim().length() == 0) {
       return true;
     }
-    return employeeFirstName.equals(pattern);
+    return firstNameToExamine.startsWith(employeeFirstName);
   }
   
-  public boolean matchesLastName(String pattern) {
+  public boolean matchesLastName(String lastNameToExamine) {
     if (employeeLastName.trim().length() == 0) {
       return true;
     }
-    return employeeLastName.equals(pattern);
+    return lastNameToExamine.startsWith(employeeLastName);
   }
   
   public boolean matchesMonth(Integer pattern) {
@@ -65,6 +69,24 @@ public class SalaryQueryCriteriaDO {
       return true;
     }
     return year.intValue() == pattern.intValue();
+  }
+  public Integer getItemsProPage() {
+    return itemsProPage;
+  }
+  public void setItemsProPage(Integer itemsProPage) {
+    this.itemsProPage = itemsProPage;
+  }
+  public String getOrderType() {
+    return orderType;
+  }
+  public void setOrderType(String orderType) {
+    this.orderType = orderType;
+  }
+  public Integer getPageNumber() {
+    return pageNumber;
+  }
+  public void setPageNumber(Integer pageNumber) {
+    this.pageNumber = pageNumber;
   }
   
 }

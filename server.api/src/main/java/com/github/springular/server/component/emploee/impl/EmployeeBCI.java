@@ -1,6 +1,8 @@
 package com.github.springular.server.component.emploee.impl;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -61,6 +63,7 @@ public class EmployeeBCI implements IEmployeeBCI {
 		return true;
 	}
 
+	// TODO move to datastore ... and finally replace with db-implementation
   @Override
   public List<SalaryDO> getSalaries(SalaryQueryCriteriaDO criteria) {
     List<SalaryDO> result = new ArrayList<SalaryDO>();
@@ -76,9 +79,76 @@ public class EmployeeBCI implements IEmployeeBCI {
         result.add(salaryDO);
       }
     }
+
+    if (criteria.getOrderType() != null) {
+      String[] split = criteria.getOrderType().split("\\.");
+      boolean reverse = "desc".equals(split[1]);
+          
+      Comparator<SalaryDO> comparator = getComparator(split[0]);
+      if (comparator != null) {
+        Collections.sort(result, comparator);
+      }
+          
+      if (reverse) {
+        Collections.reverse(result);
+      }
+    }
     
-    return result;
+    int itemsProPage = ( criteria.getItemsProPage() != null ? criteria.getItemsProPage() : 10 );
+    int pageNumber = ( criteria.getPageNumber() != null ? criteria.getPageNumber() : 0);
+    
+    int startIndex = itemsProPage * pageNumber;
+    int endIndex = startIndex + itemsProPage;
+    if (endIndex > result.size()) {
+      endIndex = result.size();
+    }
+    
+    return result.subList(startIndex, endIndex);
   }
 
+  private Comparator<SalaryDO> getComparator(String orderType) {
+    switch (orderType) {
+    case "firstName": return new FirstNameComparator();
+    case "lastName": return new LastNameComparator();
+    case "year": return new YearComparator();
+    case "month": return new MonthComparator();
+    case "amount": return new AmountComparator();
+    }
+    return null;
+  }
 
+  class FirstNameComparator implements Comparator<SalaryDO> {
+    @Override
+    public int compare(SalaryDO o1, SalaryDO o2) {
+      return o1.getEmployeeFirstName().compareTo(o2.getEmployeeFirstName());
+    }
+  }
+  
+  class LastNameComparator implements Comparator<SalaryDO> {
+    @Override
+    public int compare(SalaryDO o1, SalaryDO o2) {
+      return o1.getEmployeeLastName().compareTo(o2.getEmployeeLastName());
+    }
+  }
+  
+  class MonthComparator implements Comparator<SalaryDO> {
+    @Override
+    public int compare(SalaryDO o1, SalaryDO o2) {
+      return o1.getMonth().compareTo(o2.getMonth());
+    }
+  }
+  
+  class YearComparator implements Comparator<SalaryDO> {
+    @Override
+    public int compare(SalaryDO o1, SalaryDO o2) {
+      return o1.getYear().compareTo(o2.getYear());
+    }
+  }
+  
+  class AmountComparator implements Comparator<SalaryDO> {
+    @Override
+    public int compare(SalaryDO o1, SalaryDO o2) {
+      return o1.getAmount().compareTo(o2.getAmount());
+    }
+  }
 }
