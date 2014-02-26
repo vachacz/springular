@@ -9,7 +9,6 @@ public class SalaryQueryCriteriaDO {
   private Integer year;
   
   private Integer itemsProPage;
-  private Integer pageNumber;
   private String orderType;
   
   public String getAmount() {
@@ -81,12 +80,6 @@ public class SalaryQueryCriteriaDO {
   }
   public void setOrderType(String orderType) {
     this.orderType = orderType;
-  }
-  public Integer getPageNumber() {
-    return pageNumber;
-  }
-  public void setPageNumber(Integer pageNumber) {
-    this.pageNumber = pageNumber;
   }
   
 }

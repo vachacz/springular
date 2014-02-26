@@ -95,10 +95,9 @@ public class EmployeeBCI implements IEmployeeBCI {
     }
     
     int itemsProPage = ( criteria.getItemsProPage() != null ? criteria.getItemsProPage() : 10 );
-    int pageNumber = ( criteria.getPageNumber() != null ? criteria.getPageNumber() : 0);
     
-    int startIndex = itemsProPage * pageNumber;
-    int endIndex = startIndex + itemsProPage;
+    int startIndex = 0;
+    int endIndex = itemsProPage;
     if (endIndex > result.size()) {
       endIndex = result.size();
     }
