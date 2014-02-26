@@ -19,15 +19,18 @@ DONE
 - FRONTEND:
   - AngularJS application (1.2)
     - angular-animation used for fluent appearence of validation messages
-    - example custom Angular directive
+    - custom Angular directive
+    - custom Angular filter
     - table with client side filter|order|paging
   - Bbootstrap layout 
     - Superhere Theme included `http://bootswatch.com/superhero`
 - functionality
-  - list of users with client side paging (based on bootstrap component)
+  - list of employees with client side paging (based on bootstrap component)
     - user edition in modal window
+    - route to the salary list of a given employee
   - login + logout via navbar
-  - list of payments available only for logged in users
+  - list of salaries available only for logged in users
+    - server side filter|sort
 
 TODO
 ==========
