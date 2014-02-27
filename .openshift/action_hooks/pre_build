@@ -1,7 +1,9 @@
 #!/bin/bash
+echo "Checking Gradle ..." 
 set -x
 if [ ! -d $OPENSHIFT_DATA_DIR/gradle-1.11 ]
 then
+    echo "Gradle not found downloading ..." 
     cd $OPENSHIFT_DATA_DIR
     mkdir gradle
     wget http://services.gradle.org/distributions/gradle-1.11-bin.zip

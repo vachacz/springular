@@ -1,6 +1,6 @@
 #!/bin/bash
 set -x
-if [ ! -d $OPENSHIFT_DATA_DIR/gradle-1.6 ]
+if [ ! -d $OPENSHIFT_DATA_DIR/gradle-1.11 ]
 then
     cd $OPENSHIFT_DATA_DIR
     mkdir gradle
