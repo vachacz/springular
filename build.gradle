@@ -12,10 +12,6 @@ buildscript {
          url "http://repo.spring.io/libs-snapshot" 
       }
    }
-
-   dependencies {
-      classpath 'org.gradle.api.plugins:gradle-heroku:0.9.6'
-   }
 }
 
 allprojects {
@@ -104,7 +100,6 @@ project(':server.webapp') {
 project(':springular.ear') {
 
    apply plugin: 'ear'
-   //apply plugin: 'heroku'
 
    ear {
       baseName = 'springular'
@@ -112,11 +107,6 @@ project(':springular.ear') {
       dependsOn(":server.war:war")
       dependsOn(":server.webapp:war")
    }
-
-   //heroku {
-   //   appName = 'springular'
-   //   apiKey = '654ea240-b802-47cc-b396-7d70ce9437ab'
-   //}
 
    dependencies {
       deploy project(path: ':server.war', configuration: 'archives')

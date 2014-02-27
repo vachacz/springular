@@ -106,13 +106,18 @@ public class EmployeeBCI implements IEmployeeBCI {
   }
 
   private Comparator<SalaryDO> getComparator(String orderType) {
-    switch (orderType) {
-    case "firstName": return new FirstNameComparator();
-    case "lastName": return new LastNameComparator();
-    case "year": return new YearComparator();
-    case "month": return new MonthComparator();
-    case "amount": return new AmountComparator();
-    }
+      if (orderType.equals("firstName")) return new FirstNameComparator();
+      if (orderType.equals("lastName")) return new LastNameComparator();
+      if (orderType.equals("year")) return new YearComparator();
+      if (orderType.equals("month")) return new MonthComparator();
+      if (orderType.equals("amount")) return new AmountComparator();
+//    switch (orderType) {
+//    case "firstName": return new FirstNameComparator();
+//    case "lastName": return new LastNameComparator();
+//    case "year": return new YearComparator();
+//    case "month": return new MonthComparator();
+//    case "amount": return new AmountComparator();
+//    }
     return null;
   }
 
