@@ -10,3 +10,4 @@ then
     unzip gradle-1.11-bin.zip
     rm -f gradle-1.11-bin.zip
 fi
+echo "Gradle done ..."
