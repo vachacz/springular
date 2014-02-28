@@ -67,11 +67,12 @@ project(':server.rest') {
       compile 'com.fasterxml.jackson.core:jackson-databind:2.3.0'
 
       compile 'org.apache.tomcat:tomcat-servlet-api:7.0.42'
+
       compile 'org.springframework.security:spring-security-core:3.2.0.RELEASE'
       compile 'org.springframework.security:spring-security-web:3.2.0.RELEASE'
       compile 'org.springframework.security:spring-security-config:3.2.0.RELEASE'
-   }
 
+   }
 }
 
 project(':server.war') {
@@ -84,6 +85,8 @@ project(':server.war') {
 
    dependencies {
       compile project(':server.rest')
+
+      providedCompile 'org.apache.tomcat:tomcat-servlet-api:7.0.42'
    }
 }
 
