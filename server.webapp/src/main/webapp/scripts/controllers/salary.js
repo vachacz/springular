@@ -18,13 +18,6 @@ mainPage.controller('controller.salary', ['$scope', '$modal', '$location', 'Rest
 		trigger: 'manual'
 	});
 	
-	$scope.$watch('filterCriteria', function () {
-		if (! $scope.searchPopoverVisible) {
-			$('#salarySearchCriteria').popover('show');
-			$scope.searchPopoverVisible = true;
-		}
-	}, true);
-	
 	$scope.executeSalarySearch = function () {
 		$('#salarySearchCriteria').popover('hide');
 		$scope.searchPopoverVisible = false;
@@ -33,5 +26,14 @@ mainPage.controller('controller.salary', ['$scope', '$modal', '$location', 'Rest
 			$scope.salaries = salaries;
 		});
 	}
+	
+	$scope.$watch('filterCriteria', function (before, after) {
+		if (before != after) {
+			if (! $scope.searchPopoverVisible) {
+				$('#salarySearchCriteria').popover('show');
+				$scope.searchPopoverVisible = true;
+			}
+		}
+	}, true);
 	
 }]);
