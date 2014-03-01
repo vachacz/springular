@@ -8,5 +8,7 @@ export PATH=$GRADLE_HOME/bin:$PATH
 gradle server.webapp:war
 gradle server.war:war
 
-cp server.webapp/build/libs/angular-webapp.war ./app-root/runtime/dependencies/jbossews/webapps/ROOT.war
-cp server.war/build/libs/angular-rest.war ./app-root/runtime/dependencies/jbossews/webapps/angular-rest.war
+cp ~/app-root/runtime/repo/server.webapp/build/libs/angular-webapp.war ~/app-root/runtime/dependencies/jbossews/webapps/ROOT.war
+cp ~/app-root/runtime/repo/server.war/build/libs/angular-rest.war ~/app-root/runtime/dependencies/jbossews/webapps/angular-rest.war
+
+ctl_app restart
