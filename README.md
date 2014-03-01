@@ -1,14 +1,17 @@
 springular
 ==========
 
-Demo application (AngularJS + Spring REST)
+AngularJS demo application (Gradle + Spring REST + AngularJS + Openshift)
+
+Application `https://app-springular.rhcloud.com`
 
 DONE
 ==========
 - project structure
-- Gradle build
-  - Eclipse integration via Gradle-Eclipse plugin
-  - generation of project EAR (including WAR with Spring rest service, WAR with AngularJS webapp)
+- BUILD:
+  - Gradle (1.6 instead of 1.11 due to an Openshift issue)
+    - Eclipse integration via Gradle-Eclipse plugin
+    - generation of project `EAR` (including `WAR` with Spring Rest service, `WAR` with AngularJS webapp)
 - BACKEND:
   - Spring Framework (4.0.1)
     - java-based configuration
@@ -23,19 +26,21 @@ DONE
     - custom Angular filter
     - table with client side filter|order|paging
   - Bbootstrap layout 
-    - Superhere Theme included `http://bootswatch.com/superhero`
-- functionality
-  - list of employees with client side paging (based on bootstrap component)
+    - Superhero Theme included `http://bootswatch.com/superhero`
+- DEPLOYMENT:
+  - Openshift integration `https://app-springular.rhcloud.com`
+    - execution of Gradle build and automatic redeployment after `git push`
+- FUNCTIONALITY:
+  - list of employees with client side paging|filtering|order (based on bootstrap component)
     - user edition in modal window
     - route to the salary list of a given employee
-  - login + logout via navbar
-  - list of salaries available only for logged in users
+  - list of salaries available only for an authenticated users
     - server side filter|sort
+  - login + logout via navbar
+    - use admin/admin credentials to sing in
 
 TODO
 ==========
-- deploy on cloud
-  - including spring profiles for development/deployment (when needed)
 - security
   - simple permission system (+role based, +field based?)
   - token based CSRF resitance
@@ -46,18 +51,18 @@ TODO
 - testing
   - server side unit tests + integration tests with rest
   - client (+jasmine, +karma)
-- domain driven design (if reasonable. not yet desided)
+- domain driven design (if reasonable. not yet decided)
 - funcionality
   - registration
+  - new employee
 - logging
-- javascript (+how to structure angular controllers in project)
 - handling of 401 request in Angular
 - more ... TBD?
 
 SETUP
 ==========
 - install 
-  - gradle
+  - Gradle 1.6
   - IDE: eclipse STS (including tc-server / tomcat)
 - gradle eclipse
 - import projects into eclipse
@@ -71,3 +76,12 @@ SETUP
   - webservice: `http://localhost:<port>/angular-rest/users`
   - application: `http://localhost:<port>/angular-webapp/index.html`
 - enjoy!
+
+DEPLOYMENT
+==========
+- add public ssh key to the openshift account
+- add openshift remote to local git repository
+  - `git remote add openshift -f ssh://530e696d5973ca8fe20003b4@app-springular.rhcl oud.com/~/git/app.git/`
+- push to openshift
+  - `git push openshift HEAD`
+    - git push triggers a build and automatically deploys a new version of the application
