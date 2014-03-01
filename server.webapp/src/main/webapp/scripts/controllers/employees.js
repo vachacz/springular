@@ -17,13 +17,7 @@ SpringularEmployee.controller('controller.employees', ['$scope', '$modal', '$loc
         $scope.employeesTotal = employees.length;
         
         $scope.$watch('filterCriteria', function(newCriteria) {  
-        	$scope.employeesFilteredList = 
-        		filterFilter($scope.employees, { 
-        			login:     $scope.filterCriteria.login, 
-        			firstName: $scope.filterCriteria.firstName,
-        			lastName:  $scope.filterCriteria.lastName 
-        		});
-        	$scope.employeesTotal = $scope.employeesFilteredList.length;  
+        	$scope.filterEmployees();
         }, true)
     });
 	
@@ -34,13 +28,6 @@ SpringularEmployee.controller('controller.employees', ['$scope', '$modal', '$loc
 			$scope.employeeOrderReverse = !$scope.employeeOrderReverse;
 		}
 		$scope.employeeOrderPredicate = sortAttributeName;
-	}
-	
-	$scope.sortClass = function(sortAttributeName) {
-		if ($scope.employeeOrderPredicate == sortAttributeName) {
-			return $scope.employeeOrderReverse == false ? 'sort-false' : 'sort-true';
-		}
-		return '';
 	}
 	
     $scope.editEmployee = function ($employee) {
@@ -58,13 +45,30 @@ SpringularEmployee.controller('controller.employees', ['$scope', '$modal', '$loc
     $scope.deleteEmployee = function (employee) {
     	employee.$delete(function() {
     		$scope.employees.splice( $scope.employees.indexOf(employee), 1 );
-			$scope.employeesTotal--;
+    		$scope.filterEmployees();
     	});
     }
     
     $scope.showSalaries = function (employee) {
     	$location.search({ firstName: employee.firstName, lastName: employee.lastName }).path( "/salary" );
     }
+    
+    $scope.filterEmployees = function() {
+    	$scope.employeesFilteredList = 
+    		filterFilter($scope.employees, { 
+    			login:     $scope.filterCriteria.login, 
+    			firstName: $scope.filterCriteria.firstName,
+    			lastName:  $scope.filterCriteria.lastName 
+    		});
+    	$scope.employeesTotal = $scope.employeesFilteredList.length; 
+    }
+    
+	$scope.sortClass = function(sortAttributeName) {
+		if ($scope.employeeOrderPredicate == sortAttributeName) {
+			return $scope.employeeOrderReverse == false ? 'sort-false' : 'sort-true';
+		}
+		return '';
+	}
     
 }]);
 
