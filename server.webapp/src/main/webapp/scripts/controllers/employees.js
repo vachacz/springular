@@ -70,15 +70,17 @@ SpringularEmployee.controller('controller.employees', ['$scope', '$modal', '$loc
 
 SpringularEmployee.controller('controller.modal.employee', ['$scope', '$modalInstance', '$modal', '$location', 'RestApiMasterdata', 'RestApiEmployee', 'employee', function($scope, $modalInstance, $modal, $location, RestApiMasterdata, RestApiEmployee, employee) {
 
-    $scope.employee = employee;
+    $scope.employee = angular.copy(employee);
+    $scope.employeeOrig = employee;
     $scope.errorMessages = [];
     
     RestApiMasterdata.getNationalities().success(function(result) {
     	$scope.nationalities = result;
     });
     
-	$scope.saveEmployee = function($employee) {
-		$employee.$save(function() {
+	$scope.saveEmployee = function() {
+		$scope.employee.$save(function() {
+			angular.copy($scope.employee, $scope.employeeOrig);
 			$modalInstance.close();
 			$location.path( "/employees" );
 		}, function(response) {
