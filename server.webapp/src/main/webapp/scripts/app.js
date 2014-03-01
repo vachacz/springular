@@ -2,7 +2,7 @@
 
 var SpringularApp = angular.module('springular.app', [
    'springular.rest',
-   'module.main',
+   'module.security',
    'module.salary',
    'module.employeeAdministration',
    'ngRoute',

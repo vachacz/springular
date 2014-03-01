@@ -1,5 +1,5 @@
-var mainPage = angular.module('module.main', [ 'springular.rest' ]);
-mainPage.controller('controller.main', ['$scope', '$modal', '$location', 'AuthService', function ($scope, $modal, $location, AuthService) {
+var module = angular.module('module.security', [ 'springular.rest' ]);
+module.controller('controller.security', ['$scope', '$modal', '$location', 'AuthService', function ($scope, $modal, $location, AuthService) {
 
 	$scope.credentials = {
 		login : "",
@@ -50,7 +50,7 @@ mainPage.controller('controller.main', ['$scope', '$modal', '$location', 'AuthSe
 	
 }]);
 
-mainPage.controller('controller.modal.register', ['$scope', '$modalInstance', function($scope, $modalInstance) {
+module.controller('controller.modal.register', ['$scope', '$modalInstance', function($scope, $modalInstance) {
 
     $scope.closeUser = function () {
     	$modalInstance.dismiss('cancel');
