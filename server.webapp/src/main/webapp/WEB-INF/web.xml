@@ -31,5 +31,35 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
 	    <url-pattern>*.jpg</url-pattern>
 	    <url-pattern>*.gif</url-pattern>
 	</servlet-mapping>    
+	
+    <mime-mapping>
+        <extension>html</extension>
+        <mime-type>text/html</mime-type>
+    </mime-mapping>
+
+    <mime-mapping>
+       <extension>css</extension>
+       <mime-type>text/css</mime-type>
+    </mime-mapping>
+
+    <mime-mapping>
+       <extension>js</extension>
+       <mime-type>application/javascript</mime-type>
+    </mime-mapping>
+
+    <mime-mapping>
+       <extension>png</extension>
+       <mime-type>image/png</mime-type>
+    </mime-mapping>
+    
+    <mime-mapping>
+       <extension>jpg</extension>
+       <mime-type>image/jpeg</mime-type>
+    </mime-mapping>
+
+    <mime-mapping>
+       <extension>gif</extension>
+       <mime-type>image/gif</mime-type>
+    </mime-mapping>
   
 </web-app>
