@@ -34,6 +34,27 @@ project(':server.api') {
    sourceCompatibility = 1.6
    targetCompatibility = 1.6
 
+   sourceSets {
+      generated
+   }
+
+   sourceSets.generated.java.srcDirs = ['src/main/generated']
+
+   configurations {    
+      queryDsl
+   }
+
+   task generateQueryDSL(type: JavaCompile, group: 'build', description: 'Generates the QueryDSL query types') {
+      source = sourceSets.main.java
+      classpath = configurations.compile + configurations.queryDsl
+      options.compilerArgs = [
+         "-proc:only",
+         "-processor", "com.mysema.query.apt.jpa.JPAAnnotationProcessor"
+      ]
+      destinationDir = sourceSets.generated.java.srcDirs.iterator().next()
+   }
+   compileJava.dependsOn generateQueryDSL
+
    eclipse.project {
       natures 'org.springsource.ide.eclipse.gradle.core.nature'
       natures 'org.eclipse.jdt.groovy.core.groovyNature'
@@ -41,6 +62,9 @@ project(':server.api') {
    }
 
    dependencies {
+      queryDsl 'com.mysema.querydsl:querydsl-apt:3.3.1'
+      compile 'com.mysema.querydsl:querydsl-jpa:3.3.1'
+
       compile 'com.google.guava:guava:16.0.1'
 
       compile 'org.hibernate:hibernate-validator:4.3.1.Final'
@@ -55,6 +79,7 @@ project(':server.api') {
       compile 'org.hibernate:hibernate-entitymanager:4.3.3.Final'
       compile 'org.springframework.data:spring-data-jpa:1.5.0.RELEASE'
    }
+
 }
 
 project(':server.rest') {

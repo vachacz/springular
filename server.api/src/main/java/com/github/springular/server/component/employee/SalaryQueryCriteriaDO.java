@@ -9,6 +9,8 @@ public class SalaryQueryCriteriaDO {
   private String employeeLastName;
   private Integer month;
   private Integer year;
+  
+  private Integer itemsProPage;
   private String orderType;
   
   public String getAmount() {
@@ -56,6 +58,12 @@ public class SalaryQueryCriteriaDO {
   }
   public boolean hasEmployeeFirstName() {
     return ! Strings.isNullOrEmpty(employeeFirstName);
+  }
+  public Integer getItemsProPage() {
+    return itemsProPage;
+  }
+  public void setItemsProPage(Integer itemsProPage) {
+    this.itemsProPage = itemsProPage;
   }
   
 }

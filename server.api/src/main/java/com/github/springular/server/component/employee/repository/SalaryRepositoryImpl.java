@@ -1,19 +1,15 @@
 package com.github.springular.server.component.employee.repository;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Join;
-import javax.persistence.criteria.Predicate;
-import javax.persistence.criteria.Root;
 
 import com.github.springular.server.component.employee.SalaryQueryCriteriaDO;
-import com.github.springular.server.component.employee.entity.EmployeeBE;
+import com.github.springular.server.component.employee.entity.QEmployeeBE;
+import com.github.springular.server.component.employee.entity.QSalaryBE;
 import com.github.springular.server.component.employee.entity.SalaryBE;
+import com.mysema.query.jpa.impl.JPAQuery;
 
 public class SalaryRepositoryImpl implements SalaryRepositoryCustom {
 
@@ -22,35 +18,48 @@ public class SalaryRepositoryImpl implements SalaryRepositoryCustom {
   
   @Override
   public List<SalaryBE> filterByCriteria(SalaryQueryCriteriaDO criteria) {
-    CriteriaBuilder cb = entityManager.getCriteriaBuilder();
-    CriteriaQuery<SalaryBE> query = cb.createQuery(SalaryBE.class);
     
-    Root<SalaryBE> salary = query.from(SalaryBE.class);
-    Join<SalaryBE, EmployeeBE> employee = salary.join("employee");
-    
-    List<Predicate> predicates = new ArrayList<Predicate>();
+    QEmployeeBE employee = QEmployeeBE.employeeBE;
+    QSalaryBE salary = QSalaryBE.salaryBE;
+    JPAQuery query = new JPAQuery(entityManager);
+    query.from(salary).join(salary.employee, employee);
     
     if (criteria.getMonth() != null) {
-      predicates.add( cb.equal(salary.get("month"), criteria.getMonth()) );
+      query.where(salary.month.eq(criteria.getMonth()));
     }
     if (criteria.getYear() != null) {
-      predicates.add( cb.equal(salary.get("year"), criteria.getYear()) );
+      query.where(salary.year.eq(criteria.getYear()));
     }
     if (criteria.hasAmount()) {
-      predicates.add( cb.equal(salary.get("amount"), Integer.valueOf(criteria.getAmount())) );
-    }
-    if (criteria.hasEmployeeLastName()) {
-      predicates.add( cb.like(cb.lower(employee.<String>get("lastName")), "%" + criteria.getEmployeeLastName().toLowerCase() + "%"));
+      query.where(salary.amount.eq(Integer.valueOf(criteria.getAmount())));
     }
     if (criteria.hasEmployeeFirstName()) {
-      predicates.add( cb.like(cb.lower(employee.<String>get("firstName")), "%" + criteria.getEmployeeFirstName().toLowerCase() + "%"));
+      query.where(employee.firstName.containsIgnoreCase(criteria.getEmployeeFirstName()));
+    }
+    if (criteria.hasEmployeeLastName()) {
+      query.where(employee.lastName.containsIgnoreCase(criteria.getEmployeeLastName()));
     }
     
-    // TODO order by
-    // TODO limit results
+    if (criteria.getOrderType() != null) {
+      String order = criteria.getOrderType();
+      
+      if ("firstName".equals(order)) {
+        query.orderBy(employee.firstName.asc());
+      } else if ("lastName".equals(order)) {
+        query.orderBy(employee.lastName.asc());
+      } else if ("year".equals(order)) {
+        query.orderBy(salary.year.desc());
+      } else if ("month".equals(order)) {
+        query.orderBy(salary.month.desc());
+      } else if ("amount".equals(order)) {
+        query.orderBy(salary.amount.desc());
+      }
+    }
     
-    CriteriaQuery<SalaryBE> resultQuery = query.select(salary).where(predicates.toArray(new Predicate[predicates.size()]));
-    return entityManager.createQuery(resultQuery).getResultList();    
+    int limit = criteria.getItemsProPage() != null ? criteria.getItemsProPage() : 10; 
+    query.limit(limit);
+    
+    return query.list(salary);
   }
 
 }
