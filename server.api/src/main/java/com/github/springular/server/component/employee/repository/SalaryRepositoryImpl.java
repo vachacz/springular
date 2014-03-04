@@ -43,6 +43,7 @@ public class SalaryRepositoryImpl implements SalaryRepositoryCustom {
     if (criteria.getOrderType() != null) {
       String order = criteria.getOrderType();
       
+      // TODO: switch
       if ("firstName".equals(order)) {
         query.orderBy(employee.firstName.asc());
       } else if ("lastName".equals(order)) {

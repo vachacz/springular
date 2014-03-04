@@ -11,6 +11,7 @@ import org.springframework.context.support.ReloadableResourceBundleMessageSource
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
 import com.github.springular.server.configuration.aspect.ValidationAspect;
+import com.github.springular.server.configuration.db.DummyDataCreator;
 
 @Configuration
 @EnableAspectJAutoProxy
@@ -29,6 +30,11 @@ public class BackendConfiguration {
   @Bean
   public CommonAnnotationBeanPostProcessor commonAnnotationBeanPostProcessor() {
     return new CommonAnnotationBeanPostProcessor();
+  }
+  
+  @Bean
+  public DummyDataCreator dummyDataCreator() {
+    return new DummyDataCreator();
   }
   
   @Bean
