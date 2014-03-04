@@ -11,14 +11,20 @@ DONE
 - BUILD:
   - Gradle (1.6 instead of 1.11 due to an Openshift issue)
     - Eclipse integration via Gradle-Eclipse plugin
+    - generation of QueryDSL classes
     - generation of project `EAR` (including `WAR` with Spring Rest service, `WAR` with AngularJS webapp)
 - BACKEND:
+  - in-memory HSQL database managed by Spring
   - Spring Framework (4.0.1)
     - java-based configuration
     - rest service endpoint
     - cookie based security (+login, +logout, but not yet CSRF safe)
     - aspect driven Hibernate Validator (+ custom validation messages)
     - sample GET + POST requests implementation
+    - JPA layer
+      - Spring Data JPA (1.5.0)
+      - custom Spring Data repository
+      - QueryDsl (3.3.1)
 - FRONTEND:
   - AngularJS application (1.2)
     - angular-animation used for fluent appearence of validation messages
@@ -45,13 +51,9 @@ TODO
   - simple permission system (+role based, +field based?)
   - token based CSRF resitance
   - user store provided by backend components
-- datastore (+nosql on cloud?)
-  - transaction handling
-- bower, grunt, yo integration (if reasonable)
 - testing
   - server side unit tests + integration tests with rest
   - client (+jasmine, +karma)
-- domain driven design (if reasonable. not yet decided)
 - funcionality
   - registration
   - new employee
