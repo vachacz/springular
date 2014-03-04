@@ -1,5 +1,7 @@
 package com.github.springular.server.component.employee;
 
+import com.google.common.base.Strings;
+
 public class SalaryQueryCriteriaDO {
   
   private String amount;
@@ -7,8 +9,6 @@ public class SalaryQueryCriteriaDO {
   private String employeeLastName;
   private Integer month;
   private Integer year;
-  
-  private Integer itemsProPage;
   private String orderType;
   
   public String getAmount() {
@@ -41,45 +41,21 @@ public class SalaryQueryCriteriaDO {
   public void setYear(Integer year) {
     this.year = year;
   }
-  
-  public boolean matchesFirstName(String firstNameToExamine) {
-    if (employeeFirstName == null || employeeFirstName.trim().length() == 0) {
-      return true;
-    }
-    return firstNameToExamine.startsWith(employeeFirstName);
-  }
-  
-  public boolean matchesLastName(String lastNameToExamine) {
-    if (employeeLastName == null || employeeLastName.trim().length() == 0) {
-      return true;
-    }
-    return lastNameToExamine.startsWith(employeeLastName);
-  }
-  
-  public boolean matchesMonth(Integer pattern) {
-    if (month == null) {
-      return true;
-    }
-    return month.intValue() == pattern.intValue();
-  }
-  
-  public boolean matchesYear(Integer pattern) {
-    if (year == null) {
-      return true;
-    }
-    return year.intValue() == pattern.intValue();
-  }
-  public Integer getItemsProPage() {
-    return itemsProPage;
-  }
-  public void setItemsProPage(Integer itemsProPage) {
-    this.itemsProPage = itemsProPage;
-  }
   public String getOrderType() {
     return orderType;
   }
   public void setOrderType(String orderType) {
     this.orderType = orderType;
+  }
+  
+  public boolean hasAmount() {
+    return ! Strings.isNullOrEmpty(amount);
+  }
+  public boolean hasEmployeeLastName() {
+    return ! Strings.isNullOrEmpty(employeeLastName);
+  }
+  public boolean hasEmployeeFirstName() {
+    return ! Strings.isNullOrEmpty(employeeFirstName);
   }
   
 }

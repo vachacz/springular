@@ -1,5 +1,7 @@
 package com.github.springular.server.component.employee;
 
+import com.github.springular.server.component.employee.entity.SalaryBE;
+
 public class SalaryDO {
   
   private String id;
@@ -10,6 +12,19 @@ public class SalaryDO {
   private Integer month;
   private Integer amount;
   
+  public SalaryDO() {
+  }
+  
+  public SalaryDO(SalaryBE salaryBE) {
+     id = salaryBE.getId().toString();               
+     employeeId = salaryBE.getEmployee().getId().toString();       
+     employeeFirstName = salaryBE.getEmployee().getFirstName();
+     employeeLastName= salaryBE.getEmployee().getLastName(); 
+     year = salaryBE.getYear();            
+     month = salaryBE.getMonth();           
+     amount = salaryBE.getAmount();          
+  }
+
   public String getId() {
     return id;
   }

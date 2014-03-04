@@ -17,7 +17,7 @@ import com.github.springular.server.configuration.aspect.ValidationAspect;
 @ComponentScan(basePackages = { 
     "com.github.springular.server.component" 
 }, includeFilters = { 
-    @Filter( type = FilterType.REGEX, pattern = { ".*BCI", ".*Store" } ) 
+    @Filter( type = FilterType.REGEX, pattern = { ".*BCI" } ) 
 })
 public class BackendConfiguration {
 

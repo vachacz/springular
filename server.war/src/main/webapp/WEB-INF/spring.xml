@@ -12,6 +12,7 @@
   <context:annotation-config />
   
   <!-- back-end component services -->
+  <bean class="com.github.springular.server.configuration.DataSourceConfiguration" />
   <bean class="com.github.springular.server.configuration.BackendConfiguration" />
 
   <!-- json end-point configuration -->
