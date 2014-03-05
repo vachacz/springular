@@ -52,13 +52,13 @@ public class SalaryRepositoryImpl implements SalaryRepositoryCustom {
   }
 
   private OrderSpecifier<?> computeOrderType(String order) {
-    switch (order) {
-      case "firstName": return QEmployeeBE.employeeBE.firstName.asc();
-      case "lastName": return QEmployeeBE.employeeBE.lastName.asc();
-      case "year": return QSalaryBE.salaryBE.year.asc();
-      case "month": return QSalaryBE.salaryBE.month.asc();
-      case "amount": return QSalaryBE.salaryBE.amount.asc();
-    }
+    
+    if ("firstName".equals(order)) return QEmployeeBE.employeeBE.firstName.asc();
+    if ("lastName".equals(order)) return QEmployeeBE.employeeBE.lastName.asc();
+    if ("year".equals(order)) return QSalaryBE.salaryBE.year.asc();
+    if ("month".equals(order)) return QSalaryBE.salaryBE.month.asc();
+    if ("amount".equals(order)) return QSalaryBE.salaryBE.amount.asc();
+    
     throw new RuntimeException("Unknown order type.");
   }
 

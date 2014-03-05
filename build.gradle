@@ -31,6 +31,9 @@ project(':server.api') {
    apply plugin: 'java'
    apply plugin: 'eclipse-wtp'
 
+   sourceCompatibility = 1.6
+   targetCompatibility = 1.6
+
    sourceSets {
       generated
    }
@@ -87,6 +90,9 @@ project(':server.rest') {
 
    apply plugin: 'java'
    apply plugin: 'eclipse-wtp'
+
+   sourceCompatibility = 1.6
+   targetCompatibility = 1.6
 
    eclipse.project {
       natures 'org.springsource.ide.eclipse.gradle.core.nature'
