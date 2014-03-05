@@ -29,7 +29,9 @@ public class EmployeeBE {
   }
   
   public EmployeeBE(EmployeeDO employee) {
-    id = Integer.valueOf(employee.getId());
+    if (employee.getId() != null) {
+      id = Integer.valueOf(employee.getId());
+    }
     login = employee.getLogin();
     firstName = employee.getFirstName();
     lastName = employee.getLastName();

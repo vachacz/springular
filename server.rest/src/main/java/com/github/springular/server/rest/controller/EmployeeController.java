@@ -16,24 +16,30 @@ import com.github.springular.server.component.employee.EmployeeDO;
 @Controller
 public class EmployeeController {
 
-	@Autowired IEmployeeBCI authBCI;
+	@Autowired IEmployeeBCI employeeBCI;
 	
 	@ResponseBody
 	@RequestMapping(value = "/employee", method = RequestMethod.GET)
 	public List<EmployeeDO> getEmployees() {
-		return authBCI.getEmployees();
+		return employeeBCI.getEmployees();
 	}
 	
   @ResponseBody
   @RequestMapping(value = "/employee/{id}", method = RequestMethod.POST)
   public void updateEmployee(@RequestBody EmployeeDO employee) {
-    authBCI.updateEmployee(employee);
+    employeeBCI.createOrUpdateEmployee(employee);
   }
     
   @ResponseBody
+  @RequestMapping(value = "/employee", method = RequestMethod.POST)
+  public void createEmployee(@RequestBody EmployeeDO employee) {
+    employeeBCI.createOrUpdateEmployee(employee);
+  }
+  
+  @ResponseBody
   @RequestMapping(value = "/employee/{id}", method = RequestMethod.DELETE)
   public void deleteEmployee(@PathVariable(value = "id") String employeeId) {
-    authBCI.deleteEmployee(employeeId);
+    employeeBCI.deleteEmployee(employeeId);
   }
     
 }

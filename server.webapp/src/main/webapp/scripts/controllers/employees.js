@@ -30,16 +30,12 @@ SpringularEmployee.controller('controller.employees', ['$scope', '$modal', '$loc
 		$scope.employeeOrderPredicate = sortAttributeName;
 	}
 	
+	$scope.createEmployee = function() {
+      $scope.openEmployeeModalWindow({ employee: new RestApiEmployee, reload: true });
+	}
+	
     $scope.editEmployee = function ($employee) {
-      var modalInstance = $modal.open({
-        templateUrl: 'views/employeeEdit.html',
-        controller: 'controller.modal.employee',
-        resolve: {
-          employee: function () {
-            return $employee;
-          }
-        }
-      });
+      $scope.openEmployeeModalWindow({ employee: $employee, reload: false });
     };
     
     $scope.deleteEmployee = function (employee) {
@@ -70,12 +66,24 @@ SpringularEmployee.controller('controller.employees', ['$scope', '$modal', '$loc
 		return '';
 	}
     
+    $scope.openEmployeeModalWindow = function (params) {
+      var modalInstance = $modal.open({
+        templateUrl: 'views/employeeDetails.html',
+        controller: 'controller.modal.employee',
+        resolve: {
+          params: function () {
+            return params;
+          }
+        }
+      });
+    };
+	
 }]);
 
-SpringularEmployee.controller('controller.modal.employee', ['$scope', '$modalInstance', '$modal', '$location', 'RestApiMasterdata', 'RestApiEmployee', 'employee', function($scope, $modalInstance, $modal, $location, RestApiMasterdata, RestApiEmployee, employee) {
+SpringularEmployee.controller('controller.modal.employee', ['$scope', '$route', '$modalInstance', '$modal', '$location', 'RestApiMasterdata', 'RestApiEmployee', 'params', function($scope, $route, $modalInstance, $modal, $location, RestApiMasterdata, RestApiEmployee, params) {
 
-    $scope.employee = angular.copy(employee);
-    $scope.employeeOrig = employee;
+    $scope.employee = angular.copy(params.employee);
+    $scope.employeeOrig = params.employee;
     $scope.errorMessages = [];
     
     RestApiMasterdata.getNationalities().success(function(result) {
@@ -87,6 +95,9 @@ SpringularEmployee.controller('controller.modal.employee', ['$scope', '$modalIns
 			angular.copy($scope.employee, $scope.employeeOrig);
 			$modalInstance.close();
 			$location.path( "/employees" );
+			if (params.reload) {
+				$route.reload();
+			}
 		}, function(response) {
 			$scope.errorMessages = response.data.messages;
 		});

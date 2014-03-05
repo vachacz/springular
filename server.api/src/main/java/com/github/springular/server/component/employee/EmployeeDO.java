@@ -7,7 +7,6 @@ import com.github.springular.server.component.employee.entity.EmployeeBE;
 
 public class EmployeeDO {
 
-	@NotEmpty(message = "{User.NotEmpty.id}")
 	private String id;
 	
 	@NotEmpty(message = "{User.NotEmpty.login}")

@@ -47,9 +47,9 @@ public class EmployeeBCI implements IEmployeeBCI {
     }
     return result;
   }
-
+  
 	@Override
-	public void updateEmployee(@Valid EmployeeDO employee) {
+	public void createOrUpdateEmployee(@Valid EmployeeDO employee) {
 	  EmployeeBE employeeBE = new EmployeeBE(employee);
 	  
 		Builder errorBuilder = BusinessException.build();
