@@ -20,8 +20,11 @@ import com.github.springular.server.exception.BusinessException.Builder;
 
 public class EmployeeBCI implements IEmployeeBCI {
 
-  @Autowired SalaryRepository salaryRepository;
-	@Autowired EmployeeRepository employeeRepository;
+  @Autowired 
+  SalaryRepository salaryRepository;
+  
+	@Autowired 
+	EmployeeRepository employeeRepository;
 	
 	// TODO: find a way to convert between BE-DO
 	

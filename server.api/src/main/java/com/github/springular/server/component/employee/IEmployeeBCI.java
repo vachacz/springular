@@ -10,5 +10,4 @@ public interface IEmployeeBCI {
 	public void updateEmployee(EmployeeDO employee);
   public void deleteEmployee(String employeeId);
 
-	
 }

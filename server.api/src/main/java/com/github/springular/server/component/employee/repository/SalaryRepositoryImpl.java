@@ -10,6 +10,7 @@ import com.github.springular.server.component.employee.entity.QEmployeeBE;
 import com.github.springular.server.component.employee.entity.QSalaryBE;
 import com.github.springular.server.component.employee.entity.SalaryBE;
 import com.mysema.query.jpa.impl.JPAQuery;
+import com.mysema.query.types.OrderSpecifier;
 
 public class SalaryRepositoryImpl implements SalaryRepositoryCustom {
 
@@ -40,27 +41,25 @@ public class SalaryRepositoryImpl implements SalaryRepositoryCustom {
       query.where(employee.lastName.containsIgnoreCase(criteria.getEmployeeLastName()));
     }
     
-    if (criteria.getOrderType() != null) {
-      String order = criteria.getOrderType();
-      
-      // TODO: switch
-      if ("firstName".equals(order)) {
-        query.orderBy(employee.firstName.asc());
-      } else if ("lastName".equals(order)) {
-        query.orderBy(employee.lastName.asc());
-      } else if ("year".equals(order)) {
-        query.orderBy(salary.year.desc());
-      } else if ("month".equals(order)) {
-        query.orderBy(salary.month.desc());
-      } else if ("amount".equals(order)) {
-        query.orderBy(salary.amount.desc());
-      }
+    if (criteria.isOrderSpecified()) {
+      query.orderBy(computeOrderType(criteria.getOrderType()));
     }
     
     int limit = criteria.getItemsProPage() != null ? criteria.getItemsProPage() : 10; 
     query.limit(limit);
     
     return query.list(salary);
+  }
+
+  private OrderSpecifier<?> computeOrderType(String order) {
+    switch (order) {
+      case "firstName": return QEmployeeBE.employeeBE.firstName.asc();
+      case "lastName": return QEmployeeBE.employeeBE.lastName.asc();
+      case "year": return QSalaryBE.salaryBE.year.asc();
+      case "month": return QSalaryBE.salaryBE.month.asc();
+      case "amount": return QSalaryBE.salaryBE.amount.asc();
+    }
+    throw new RuntimeException("Unknown order type.");
   }
 
 }
