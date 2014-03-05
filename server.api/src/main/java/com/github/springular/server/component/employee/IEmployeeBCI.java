@@ -8,6 +8,6 @@ public interface IEmployeeBCI {
 	public List<EmployeeDO> getEmployees();
 	
 	public void createOrUpdateEmployee(EmployeeDO employee);
-  public void deleteEmployee(String employeeId);
+  public void deleteEmployee(Integer employeeId);
 
 }

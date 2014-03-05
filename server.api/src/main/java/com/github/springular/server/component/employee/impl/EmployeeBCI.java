@@ -70,8 +70,8 @@ public class EmployeeBCI implements IEmployeeBCI {
 	}
 
 	@Override
-	public void deleteEmployee(String employeeId) {
-	  employeeRepository.delete(Integer.valueOf(employeeId));
+	public void deleteEmployee(Integer employeeId) {
+	  employeeRepository.delete(employeeId);
 	}
 	
 }

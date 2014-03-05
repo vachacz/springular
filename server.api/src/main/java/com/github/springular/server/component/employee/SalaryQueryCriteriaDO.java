@@ -4,19 +4,19 @@ import com.google.common.base.Strings;
 
 public class SalaryQueryCriteriaDO {
   
-  private String amount;
   private String employeeFirstName;
   private String employeeLastName;
   private Integer month;
   private Integer year;
+  private Integer amount;
   
   private Integer itemsProPage;
   private String orderType;
   
-  public String getAmount() {
+  public Integer getAmount() {
     return amount;
   }
-  public void setAmount(String amount) {
+  public void setAmount(Integer amount) {
     this.amount = amount;
   }
   public String getEmployeeFirstName() {
@@ -51,7 +51,7 @@ public class SalaryQueryCriteriaDO {
   }
   
   public boolean hasAmount() {
-    return ! Strings.isNullOrEmpty(amount);
+    return amount != null;
   }
   public boolean hasEmployeeLastName() {
     return ! Strings.isNullOrEmpty(employeeLastName);

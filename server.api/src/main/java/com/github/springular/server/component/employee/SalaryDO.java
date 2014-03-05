@@ -4,8 +4,9 @@ import com.github.springular.server.component.employee.entity.SalaryBE;
 
 public class SalaryDO {
   
-  private String id;
-  private String employeeId;
+  private Integer id;
+  private Integer employeeId;
+  
   private String employeeFirstName;
   private String employeeLastName;
   private Integer year;
@@ -16,8 +17,8 @@ public class SalaryDO {
   }
   
   public SalaryDO(SalaryBE salaryBE) {
-     id = salaryBE.getId().toString();               
-     employeeId = salaryBE.getEmployee().getId().toString();       
+     id = salaryBE.getId();               
+     employeeId = salaryBE.getEmployee().getId();       
      employeeFirstName = salaryBE.getEmployee().getFirstName();
      employeeLastName= salaryBE.getEmployee().getLastName(); 
      year = salaryBE.getYear();            
@@ -25,16 +26,16 @@ public class SalaryDO {
      amount = salaryBE.getAmount();          
   }
 
-  public String getId() {
+  public Integer getId() {
     return id;
   }
-  public void setId(String id) {
+  public void setId(Integer id) {
     this.id = id;
   }
-  public String getEmployeeId() {
+  public Integer getEmployeeId() {
     return employeeId;
   }
-  public void setEmployeeId(String employeeId) {
+  public void setEmployeeId(Integer employeeId) {
     this.employeeId = employeeId;
   }
   public String getEmployeeFirstName() {

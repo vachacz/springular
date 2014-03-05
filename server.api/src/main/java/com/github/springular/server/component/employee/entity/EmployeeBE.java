@@ -30,7 +30,7 @@ public class EmployeeBE {
   
   public EmployeeBE(EmployeeDO employee) {
     if (employee.getId() != null) {
-      id = Integer.valueOf(employee.getId());
+      id = employee.getId();
     }
     login = employee.getLogin();
     firstName = employee.getFirstName();

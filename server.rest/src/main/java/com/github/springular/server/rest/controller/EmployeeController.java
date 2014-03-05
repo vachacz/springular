@@ -38,7 +38,7 @@ public class EmployeeController {
   
   @ResponseBody
   @RequestMapping(value = "/employee/{id}", method = RequestMethod.DELETE)
-  public void deleteEmployee(@PathVariable(value = "id") String employeeId) {
+  public void deleteEmployee(@PathVariable(value = "id") Integer employeeId) {
     employeeBCI.deleteEmployee(employeeId);
   }
     

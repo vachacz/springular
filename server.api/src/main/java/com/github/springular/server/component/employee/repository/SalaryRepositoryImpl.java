@@ -32,7 +32,7 @@ public class SalaryRepositoryImpl implements SalaryRepositoryCustom {
       query.where(salary.year.eq(criteria.getYear()));
     }
     if (criteria.hasAmount()) {
-      query.where(salary.amount.eq(Integer.valueOf(criteria.getAmount())));
+      query.where(salary.amount.eq(criteria.getAmount()));
     }
     if (criteria.hasEmployeeFirstName()) {
       query.where(employee.firstName.containsIgnoreCase(criteria.getEmployeeFirstName()));

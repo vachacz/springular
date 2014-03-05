@@ -7,7 +7,7 @@ import com.github.springular.server.component.employee.entity.EmployeeBE;
 
 public class EmployeeDO {
 
-	private String id;
+	private Integer id;
 	
 	@NotEmpty(message = "{User.NotEmpty.login}")
 	@Length(min = 8, max = 12, message = "{User.Length.login}")
@@ -25,13 +25,19 @@ public class EmployeeDO {
   }
 	
 	public EmployeeDO(EmployeeBE employeeBE) {
-	  id = employeeBE.getId().toString();
+	  id = employeeBE.getId();
 	  login = employeeBE.getLogin();
 	  firstName = employeeBE.getFirstName();
 	  lastName = employeeBE.getLastName();
 	  nationality = employeeBE.getNationality();
   }
 	
+	public Integer getId() {
+	  return id;
+	}
+	public void setId(Integer id) {
+	  this.id = id;
+	}
   public String getLogin() {
 		return login;
 	}
@@ -55,12 +61,6 @@ public class EmployeeDO {
 	}
 	public void setNationality(String nationality) {
 		this.nationality = nationality;
-	}
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
 	}
 	
 }
