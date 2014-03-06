@@ -30,11 +30,14 @@ SpringularRest.factory('AuthService', function ($resource, $http, $q, $cookieSto
 		},	
 		signOut : function(credentials) {
 			$http({method: 'GET', url: '/angular-rest/signout'});
-			$cookieStore.remove('userLoggedIn');
-			userLoggedIn = false;
+			this.markAsSignedOut();
 		},
 		isUserLoggedIn : function() {
 			return userLoggedIn;
+		},
+		markAsSignedOut : function () {
+			$cookieStore.remove('userLoggedIn');
+			userLoggedIn = false;
 		}
 	}
 });

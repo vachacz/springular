@@ -16,9 +16,6 @@ import com.github.springular.server.configuration.rest.RestAuthenticationEntryPo
 @EnableWebSecurity
 public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 	
-  @Autowired private RestAuthenticationEntryPoint restAuthenticationEntryPoint;
-  @Autowired private UserAuthenticationProvider userAuthenticationProvider;
-  
   @Bean
   public RestAuthenticationEntryPoint restAuthenticationEntryPoint() {
     return new RestAuthenticationEntryPoint();
@@ -31,7 +28,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
   
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-		auth.userDetailsService(userAuthenticationProvider);
+		auth.userDetailsService(userAuthenticationProvider());
   }
 	
 	@Override
@@ -43,7 +40,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 		    .logoutUrl("/signout").permitAll()
 		  .and()
 		  .httpBasic()
-		    .authenticationEntryPoint(restAuthenticationEntryPoint)
+		    .authenticationEntryPoint(restAuthenticationEntryPoint())
 		  .and()
 		    .authorizeRequests()
 		      .antMatchers("/secured/*").hasAuthority("USER")
