@@ -12,7 +12,7 @@ Technology stack:
 - QueryDsl 3.3.1
 - Openshift
 
-Application available under: `[https://app-springular.rhcloud.com]`
+Application available under: https://app-springular.rhcloud.com
 
 DONE
 ==========
@@ -42,9 +42,10 @@ DONE
     - employee table with client side filter|order|paging
     - HTTP 401 handing in Angular interceptor
   - Bootstrap layout 
-    - Superhero Theme - `[http://bootswatch.com/superhero]`
+    - Superhero Theme - http://bootswatch.com/superhero
 - **DEPLOYMENT**:
-  - Openshift integration `[https://app-springular.rhcloud.com]`
+  - Openshift integration 
+    - Url: https://app-springular.rhcloud.com
     - execution of Gradle build and automatic redeployment after `git push`
 - **FUNCTIONALITY**:
   - list of employees with client side paging|filtering|order
