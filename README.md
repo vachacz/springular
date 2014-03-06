@@ -1,22 +1,31 @@
 springular
 ==========
 
-AngularJS demo application (Gradle + Spring REST + AngularJS + Openshift)
+AngularJS demo application.
 
-Application `https://app-springular.rhcloud.com`
+Technology stack:
+- Gradle 1.6
+- AngularJS 1.2
+- Spring 4.0.1
+- Spring Data JPA 1.5.0
+- Hibernate 4.3.1 (as JPA provider)
+- QueryDsl 3.3.1
+- Openshift
+
+Application available under: `[https://app-springular.rhcloud.com]`
 
 DONE
 ==========
-- project structure
-- BUILD:
+- general project structure
+- **BUILD**:
   - Gradle (1.6 instead of 1.11 due to an Openshift issue)
     - Eclipse integration via Gradle-Eclipse plugin
-    - generation of QueryDSL classes
+    - generation of `QueryDSL` classes
     - generation of project `EAR` (including `WAR` with Spring Rest service, `WAR` with AngularJS webapp)
-- BACKEND:
+- **BACKEND**:
   - in-memory HSQL database managed by Spring
   - Spring Framework (4.0.1)
-    - java-based configuration
+    - java-based Spring configuration
     - rest service endpoint
     - cookie based security (+login, +logout, but not yet CSRF safe)
     - aspect driven Hibernate Validator (+ custom validation messages)
@@ -25,22 +34,23 @@ DONE
       - Spring Data JPA (1.5.0)
       - custom Spring Data repository
       - QueryDsl (3.3.1)
-- FRONTEND:
+- **FRONTEND**:
   - AngularJS application (1.2)
     - angular-animation used for fluent appearence of validation messages
     - custom Angular directive
     - custom Angular filter
-    - table with client side filter|order|paging
-  - Bbootstrap layout 
-    - Superhero Theme included `http://bootswatch.com/superhero`
-- DEPLOYMENT:
-  - Openshift integration `https://app-springular.rhcloud.com`
+    - employee table with client side filter|order|paging
+    - HTTP 401 handing in Angular interceptor
+  - Bootstrap layout 
+    - Superhero Theme - `[http://bootswatch.com/superhero]`
+- **DEPLOYMENT**:
+  - Openshift integration `[https://app-springular.rhcloud.com]`
     - execution of Gradle build and automatic redeployment after `git push`
-- FUNCTIONALITY:
-  - list of employees with client side paging|filtering|order (based on bootstrap component)
-    - user edition in modal window
+- **FUNCTIONALITY**:
+  - list of employees with client side paging|filtering|order
+    - create|edit employee in modal window
     - route to the salary list of a given employee
-  - list of salaries available only for an authenticated users
+  - list of salaries available only for authenticated users
     - server side filter|sort
   - login + logout via navbar
     - use admin/admin credentials to sing in
@@ -50,23 +60,21 @@ TODO
 - security
   - simple permission system (+role based, +field based?)
   - token based CSRF resitance
-  - user store provided by backend components
 - testing
   - server side unit tests + integration tests with rest
   - client (+jasmine, +karma)
 - funcionality
   - registration
-  - new employee
 - logging
-- handling of 401 request in Angular
+- RequireJS
 - more ... TBD?
 
 SETUP
 ==========
-- install 
+- prerequisites: 
   - Gradle 1.6
-  - IDE: eclipse STS (including tc-server / tomcat)
-- gradle eclipse
+  - IDE: Eclipse (including tc-server / tomcat)
+- execute `gradle eclipse`
 - import projects into eclipse
 - create a server in eclipse
 - add `server.war` and `server.webapp` projects to server deployments
@@ -77,6 +85,7 @@ SETUP
 - test the stuff:
   - webservice: `http://localhost:<port>/angular-rest/users`
   - application: `http://localhost:<port>/angular-webapp/index.html`
+- in order to generate QueryDsl classes execute `gradle compileJava` 
 - enjoy!
 
 DEPLOYMENT
