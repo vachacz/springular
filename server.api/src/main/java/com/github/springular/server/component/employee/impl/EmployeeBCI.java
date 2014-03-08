@@ -1,12 +1,12 @@
 package com.github.springular.server.component.employee.impl;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.github.springular.server.common.component.BaseBCI;
 import com.github.springular.server.component.employee.EmployeeDO;
 import com.github.springular.server.component.employee.IEmployeeBCI;
 import com.github.springular.server.component.employee.SalaryDO;
@@ -18,7 +18,7 @@ import com.github.springular.server.component.employee.repository.SalaryReposito
 import com.github.springular.server.exception.BusinessException;
 import com.github.springular.server.exception.BusinessException.Builder;
 
-public class EmployeeBCI implements IEmployeeBCI {
+public class EmployeeBCI extends BaseBCI implements IEmployeeBCI {
 
   @Autowired 
   SalaryRepository salaryRepository;
@@ -26,31 +26,21 @@ public class EmployeeBCI implements IEmployeeBCI {
 	@Autowired 
 	EmployeeRepository employeeRepository;
 	
-	// TODO: find a way to convert between BE-DO
-	
 	@Override
 	public List<EmployeeDO> getEmployees() {
-	  List<EmployeeDO> result = new ArrayList<EmployeeDO>();;
-	  List<EmployeeBE> all = employeeRepository.findAll();
-	  for (EmployeeBE employeeBE : all) {
-	    result.add(new EmployeeDO(employeeBE));
-    }
-		return result;
+	  List<EmployeeBE> employees = employeeRepository.findAll();
+	  return convert(employees).toType(EmployeeDO.class);
 	}
 	
   @Override
   public List<SalaryDO> getSalaries(SalaryQueryCriteriaDO criteria) {
-    List<SalaryDO> result = new ArrayList<SalaryDO>();;
-    List<SalaryBE> all = salaryRepository.filterByCriteria(criteria);
-    for (SalaryBE employeeBE : all) {
-      result.add(new SalaryDO(employeeBE));
-    }
-    return result;
+    List<SalaryBE> salaries = salaryRepository.filterByCriteria(criteria);
+    return convert(salaries).toType(SalaryDO.class);
   }
   
 	@Override
 	public void createOrUpdateEmployee(@Valid EmployeeDO employee) {
-	  EmployeeBE employeeBE = new EmployeeBE(employee);
+	  EmployeeBE employeeBE = convert(employee).toType(EmployeeBE.class);
 	  
 		Builder errorBuilder = BusinessException.build();
 

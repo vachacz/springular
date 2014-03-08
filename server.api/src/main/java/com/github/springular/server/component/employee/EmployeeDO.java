@@ -3,8 +3,6 @@ package com.github.springular.server.component.employee;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
-import com.github.springular.server.component.employee.entity.EmployeeBE;
-
 public class EmployeeDO {
 
 	private Integer id;
@@ -20,17 +18,6 @@ public class EmployeeDO {
 	private String lastName;
 	
 	private String nationality;
-	
-	public EmployeeDO() {
-  }
-	
-	public EmployeeDO(EmployeeBE employeeBE) {
-	  id = employeeBE.getId();
-	  login = employeeBE.getLogin();
-	  firstName = employeeBE.getFirstName();
-	  lastName = employeeBE.getLastName();
-	  nationality = employeeBE.getNationality();
-  }
 	
 	public Integer getId() {
 	  return id;

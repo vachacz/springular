@@ -8,8 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-import com.github.springular.server.component.employee.EmployeeDO;
-
 @Entity
 public class EmployeeBE {
 
@@ -24,19 +22,6 @@ public class EmployeeBE {
   private String firstName;
   private String lastName;
   private String nationality;
-
-  public EmployeeBE() {
-  }
-  
-  public EmployeeBE(EmployeeDO employee) {
-    if (employee.getId() != null) {
-      id = employee.getId();
-    }
-    login = employee.getLogin();
-    firstName = employee.getFirstName();
-    lastName = employee.getLastName();
-    nationality = employee.getNationality();
-  }
 
   public Integer getId() {
     return id;

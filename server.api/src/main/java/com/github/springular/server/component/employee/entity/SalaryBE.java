@@ -19,9 +19,6 @@ public class SalaryBE {
   private Integer month;
   private Integer amount;
   
-  public SalaryBE() {
-  }
-  
   public Integer getId() {
     return id;
   }
