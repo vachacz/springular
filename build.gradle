@@ -135,6 +135,7 @@ project(':server.war') {
 
 
 project(':server.webapp') {
+
    apply plugin: 'war'
    apply plugin: 'eclipse-wtp'
 

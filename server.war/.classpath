@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="output" path="bin"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER" exported="true"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container" exported="true"/>
+	<classpathentry kind="src" path="/server.rest" exported="true"/>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.apache.tomcat/tomcat-servlet-api/7.0.42/source/12d72910e45a46d1ae300340d4c77ebf8df78926/tomcat-servlet-api-7.0.42-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.apache.tomcat/tomcat-servlet-api/7.0.42/jar/922c2671e03551564602c0be631f0035f67c4ff2/tomcat-servlet-api-7.0.42.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+</classpath>

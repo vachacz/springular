@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="output" path="bin"/>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="src/main/resources"/>
+	<classpathentry kind="src" path="src/main/generated"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER" exported="true"/>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/com.mysema.querydsl/querydsl-jpa/3.3.1/source/7fea98204507e5cabea50c8d22a7155822a3e69a/querydsl-jpa-3.3.1-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/com.mysema.querydsl/querydsl-jpa/3.3.1/jar/917b98a3c47cdf927d19124d1c8e425f47dd3cc1/querydsl-jpa-3.3.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/com.google.guava/guava/16.0.1/source/2477d012cd5379f9696e0d9d3ccc62ad13a09ca4/guava-16.0.1-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/com.google.guava/guava/16.0.1/bundle/5fa98cd1a63c99a44dd8d3b77e4762b066a5d0c5/guava-16.0.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.hibernate/hibernate-validator/4.3.1.Final/source/baa1c6895a34d8d6423da93d09cb3bed665b1b24/hibernate-validator-4.3.1.Final-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.hibernate/hibernate-validator/4.3.1.Final/jar/49b31d8ea51fa21cc78a89e9d4ddb11d6bfb4669/hibernate-validator-4.3.1.Final.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.aspectj/aspectjrt/1.7.4/source/195e42628b75fee9fec4fa0b1c66222e9dc75be/aspectjrt-1.7.4-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.aspectj/aspectjrt/1.7.4/jar/e49a5c0acee8fd66225dc1d031692d132323417f/aspectjrt-1.7.4.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.aspectj/aspectjweaver/1.7.4/source/c6eb79f2d6c7efbc7bf7bf2908a18b7beed98e13/aspectjweaver-1.7.4-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.aspectj/aspectjweaver/1.7.4/jar/d9d511e417710492f78bb0fb291a629d56bf4216/aspectjweaver-1.7.4.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.springframework/spring-aop/4.0.1.RELEASE/source/f5189a198db33b2d8adc5801339d659ee92f9040/spring-aop-4.0.1.RELEASE-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.springframework/spring-aop/4.0.1.RELEASE/jar/ff68e4cfdbb2be3e8d8a7f34e7cbacc1860dfe75/spring-aop-4.0.1.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.springframework/spring-context/4.0.1.RELEASE/source/148fc52b7d7ac01b5a67642a35d914702385c037/spring-context-4.0.1.RELEASE-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.springframework/spring-context/4.0.1.RELEASE/jar/cb996939c8d48ae55ec933041f17e7fba4d9e27d/spring-context-4.0.1.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.hsqldb/hsqldb/2.3.2/source/cf894383ae9ef2bb09bc9e02a9dd25cc8251761/hsqldb-2.3.2-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.hsqldb/hsqldb/2.3.2/jar/970fd7b8f635e2c19305160459649569655b843c/hsqldb-2.3.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.hibernate/hibernate-entitymanager/4.3.3.Final/source/a79e69802434e66e5a9e8e2d3ed52b12dfd607b0/hibernate-entitymanager-4.3.3.Final-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.hibernate/hibernate-entitymanager/4.3.3.Final/jar/fa0d36045054c50ac9cede2bbf4d8a988bc9494f/hibernate-entitymanager-4.3.3.Final.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.springframework.data/spring-data-jpa/1.5.0.RELEASE/source/ef13d367ab7daf1df8269a9bf9944d74f33f7311/spring-data-jpa-1.5.0.RELEASE-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.springframework.data/spring-data-jpa/1.5.0.RELEASE/jar/95cca09e5a65393a3e7e1a309d7bb46f14b78e6d/spring-data-jpa-1.5.0.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/com.google.code.findbugs/jsr305/1.3.9/jar/40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf/jsr305-1.3.9.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/com.mysema.commons/mysema-commons-lang/0.2.4/source/a2e4c718987af95c88ebfd37c18f2aad55712fdc/mysema-commons-lang-0.2.4-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/com.mysema.commons/mysema-commons-lang/0.2.4/jar/d09c8489d54251a6c22fbce804bdd4a070557317/mysema-commons-lang-0.2.4.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/asm/asm/3.3.1/jar/1d5f20b4ea675e6fab6ab79f1cd60ec268ddc015/asm-3.3.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/cglib/cglib/2.2.2/source/fc1558bebc50419cdb55fbffd81c290e21f058c1/cglib-2.2.2-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/cglib/cglib/2.2.2/jar/a47a971686474124562bdd4a7ccbd8ac8c3e8b11/cglib-2.2.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/com.mysema.querydsl/querydsl-core/3.3.1/source/d98e908ca6827978390e96b5d63c0ee35b5641b/querydsl-core-3.3.1-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/com.mysema.querydsl/querydsl-core/3.3.1/jar/cbc1d037360166e8eed9a221b019787924034358/querydsl-core-3.3.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.slf4j/slf4j-api/1.7.6/source/97bb93c1badeae97a3d37e3c902df2985ee3de34/slf4j-api-1.7.6-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.slf4j/slf4j-api/1.7.6/jar/562424e36df3d2327e8e9301a76027fca17d54ea/slf4j-api-1.7.6.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/javax.validation/validation-api/1.0.0.GA/source/7a561191db2203550fbfa40d534d4997624cd369/validation-api-1.0.0.GA-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/javax.validation/validation-api/1.0.0.GA/jar/b6bd7f9d78f6fdaa3c37dae18a4bd298915f328e/validation-api-1.0.0.GA.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.jboss.logging/jboss-logging/3.1.3.GA/source/4d2c4df2c1a1b2d2f9201f6d580d7d19ccf8cbdf/jboss-logging-3.1.3.GA-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.jboss.logging/jboss-logging/3.1.3.GA/jar/64499e907f19e5e1b3fdc02f81440c1832fe3545/jboss-logging-3.1.3.GA.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/aopalliance/aopalliance/1.0/source/4a4b6d692e17846a9f3da036438a7ac491d3c814/aopalliance-1.0-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/aopalliance/aopalliance/1.0/jar/235ba8b489512805ac13a8f9ea77a1ca5ebe3e8/aopalliance-1.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/commons-logging/commons-logging/1.1.1/source/f3f156cbff0e0fb0d64bfce31a352cce4a33bc19/commons-logging-1.1.1-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/commons-logging/commons-logging/1.1.1/jar/5043bfebc3db072ed80fbd362e7caf00e885d8ae/commons-logging-1.1.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.springframework/spring-core/4.0.1.RELEASE/source/758732d7c02e8cc2a1866e529b21dda85f9cf326/spring-core-4.0.1.RELEASE-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.springframework/spring-core/4.0.1.RELEASE/jar/e39774d97c9dadfe49e6dfd16e3868bc1e390554/spring-core-4.0.1.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.springframework/spring-beans/4.0.1.RELEASE/source/9449d1d53ca942bf6b060d89a2787a6408ffcabe/spring-beans-4.0.1.RELEASE-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.springframework/spring-beans/4.0.1.RELEASE/jar/605582e95fb62b43fb4a843babdcf739f3497e92/spring-beans-4.0.1.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.springframework/spring-expression/4.0.1.RELEASE/source/bb4945a162af9acf045309885b455ecdfcc7f7cd/spring-expression-4.0.1.RELEASE-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.springframework/spring-expression/4.0.1.RELEASE/jar/452cb22401e868a1e79677dd22b6a3097fc603fa/spring-expression-4.0.1.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.jboss.logging/jboss-logging-annotations/1.2.0.Beta1/source/360b782ab568672ea968726ddf209e753c860e1a/jboss-logging-annotations-1.2.0.Beta1-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.jboss.logging/jboss-logging-annotations/1.2.0.Beta1/jar/2f437f37bb265d9f8f1392823dbca12d2bec06d6/jboss-logging-annotations-1.2.0.Beta1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/xml-apis/xml-apis/1.0.b2/source/d8525661c5a0a05702fa41873d250d135031ec25/xml-apis-1.0.b2-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/xml-apis/xml-apis/1.0.b2/jar/3136ca936f64c9d68529f048c2618bd356bf85c9/xml-apis-1.0.b2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/dom4j/dom4j/1.6.1/source/a8e7149359255f43e0e5e3b1837948f9ed5861fb/dom4j-1.6.1-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/dom4j/dom4j/1.6.1/jar/5d3ccc056b6f056dbf0dddfdf43894b9065a8f94/dom4j-1.6.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.hibernate.common/hibernate-commons-annotations/4.0.4.Final/source/2b74fdecf50d43e6603179261c9254a9db9fc34d/hibernate-commons-annotations-4.0.4.Final-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.hibernate.common/hibernate-commons-annotations/4.0.4.Final/jar/f1af75eca4e13ac0578750a497159695feceebfc/hibernate-commons-annotations-4.0.4.Final.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.hibernate.javax.persistence/hibernate-jpa-2.1-api/1.0.0.Final/source/33fbaa7276b774ef0925f541640f6ff23fbc62dc/hibernate-jpa-2.1-api-1.0.0.Final-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.hibernate.javax.persistence/hibernate-jpa-2.1-api/1.0.0.Final/jar/5e731d961297e5a07290bfaf3db1fbc8bbbf405a/hibernate-jpa-2.1-api-1.0.0.Final.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.jboss.spec.javax.transaction/jboss-transaction-api_1.2_spec/1.0.0.Final/source/873910090351ef6339d2c6c231072edbd14f3a13/jboss-transaction-api_1.2_spec-1.0.0.Final-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.jboss.spec.javax.transaction/jboss-transaction-api_1.2_spec/1.0.0.Final/jar/1f9fef7a9fcbb41cc390fc370a291cf30729e094/jboss-transaction-api_1.2_spec-1.0.0.Final.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.javassist/javassist/3.18.1-GA/source/d8d089f3a8845cce22d3006e02ab1403dd73b5b6/javassist-3.18.1-GA-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.javassist/javassist/3.18.1-GA/bundle/d9a09f7732226af26bf99f19e2cffe0ae219db5b/javassist-3.18.1-GA.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/antlr/antlr/2.7.7/jar/83cd2cd674a217ade95a4bb83a8a14f351f48bd0/antlr-2.7.7.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.jboss/jandex/1.1.0.Final/source/cd042b769b296fd1bc20ca5120824caa42b6c9ed/jandex-1.1.0.Final-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.jboss/jandex/1.1.0.Final/jar/e84a2122e76f0b6503be78094ddf2108057ac15f/jandex-1.1.0.Final.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.hibernate/hibernate-core/4.3.3.Final/source/fd39bd6cd2e2ea8ff3b928e3bfbb44f52e0d7955/hibernate-core-4.3.3.Final-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.hibernate/hibernate-core/4.3.3.Final/jar/41380ff1af4207797360d722386ebee65df1a7dd/hibernate-core-4.3.3.Final.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.springframework.data/spring-data-commons/1.7.0.RELEASE/source/cd47f211a27cf0c63ef7866f36d81c6b6046954e/spring-data-commons-1.7.0.RELEASE-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.springframework.data/spring-data-commons/1.7.0.RELEASE/jar/fd12f6a3ed57f356497c0eef3cf73ddecc9611f3/spring-data-commons-1.7.0.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.slf4j/jcl-over-slf4j/1.7.6/source/eccf8c93c8cbc25d1fdae373ac38fc7bbd809397/jcl-over-slf4j-1.7.6-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.slf4j/jcl-over-slf4j/1.7.6/jar/ab1648fe1dd6f1e5c2ec6d12f394672bb8c1036a/jcl-over-slf4j-1.7.6.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.springframework/spring-tx/3.2.8.RELEASE/source/4d3b762979813384899e32762fef335b29dde12a/spring-tx-3.2.8.RELEASE-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.springframework/spring-tx/3.2.8.RELEASE/jar/af44bdd6dd44557f6a03021a7d2721bbf1708ec1/spring-tx-3.2.8.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.springframework/spring-jdbc/3.2.8.RELEASE/source/39c9d9ef5d942a28fb5c13492ac2c5a7f02da86d/spring-jdbc-3.2.8.RELEASE-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.springframework/spring-jdbc/3.2.8.RELEASE/jar/8fc09a51ca267726ffd284ab4de7c02f667da2ad/spring-jdbc-3.2.8.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.springframework/spring-orm/3.2.8.RELEASE/source/319a62078b6bf1559f4efecf3c93d46e96a987c1/spring-orm-3.2.8.RELEASE-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.springframework/spring-orm/3.2.8.RELEASE/jar/b1f3ef4edfd5344207ed03c361e17bbdf3251c49/spring-orm-3.2.8.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+</classpath>

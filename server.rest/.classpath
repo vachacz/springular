@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="output" path="bin"/>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="src/main/resources"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER" exported="true"/>
+	<classpathentry kind="src" path="/server.api" exported="true"/>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/com.google.guava/guava/16.0.1/source/2477d012cd5379f9696e0d9d3ccc62ad13a09ca4/guava-16.0.1-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/com.google.guava/guava/16.0.1/bundle/5fa98cd1a63c99a44dd8d3b77e4762b066a5d0c5/guava-16.0.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.springframework/spring-webmvc/4.0.1.RELEASE/source/b567c0d0bb7153347d479cfb3cca658c81857e85/spring-webmvc-4.0.1.RELEASE-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.springframework/spring-webmvc/4.0.1.RELEASE/jar/2dbc91a6413115f7ffbe94f0fa9bc9fda3281d90/spring-webmvc-4.0.1.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/com.fasterxml.jackson.core/jackson-core/2.3.0/source/f96b1206b2f452bcc5e096d7594bd3e5568debbb/jackson-core-2.3.0-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/com.fasterxml.jackson.core/jackson-core/2.3.0/bundle/5e19d8381e01aa64c9dd47ff453e39abc441775c/jackson-core-2.3.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/com.fasterxml.jackson.core/jackson-databind/2.3.0/source/6e8684b28e0a998550799163a49b5772132c2071/jackson-databind-2.3.0-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/com.fasterxml.jackson.core/jackson-databind/2.3.0/bundle/76eb119e9f7769c5b124afbfa17ed0c63cab4920/jackson-databind-2.3.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.apache.tomcat/tomcat-servlet-api/7.0.42/source/12d72910e45a46d1ae300340d4c77ebf8df78926/tomcat-servlet-api-7.0.42-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.apache.tomcat/tomcat-servlet-api/7.0.42/jar/922c2671e03551564602c0be631f0035f67c4ff2/tomcat-servlet-api-7.0.42.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.springframework.security/spring-security-core/3.2.0.RELEASE/source/d3893892ec1bc93e379a52854acd5e92385b6bbb/spring-security-core-3.2.0.RELEASE-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.springframework.security/spring-security-core/3.2.0.RELEASE/jar/e8e32b6a64b82c054b74d8ef4715cd0ca00cd1c/spring-security-core-3.2.0.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.springframework.security/spring-security-web/3.2.0.RELEASE/source/5727bdab507738ea1c247dcbae6210e450c8bd1c/spring-security-web-3.2.0.RELEASE-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.springframework.security/spring-security-web/3.2.0.RELEASE/jar/f5f2fbfb3a59b1371ca9dda348d8eee22f99a19f/spring-security-web-3.2.0.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.springframework.security/spring-security-config/3.2.0.RELEASE/source/72aa563f554d83cf191d7e6a778fbfb5358465e/spring-security-config-3.2.0.RELEASE-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.springframework.security/spring-security-config/3.2.0.RELEASE/jar/9f10bd410bdda6140d7aa38cc9c115cb9f797626/spring-security-config-3.2.0.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/commons-logging/commons-logging/1.1.1/source/f3f156cbff0e0fb0d64bfce31a352cce4a33bc19/commons-logging-1.1.1-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/commons-logging/commons-logging/1.1.1/jar/5043bfebc3db072ed80fbd362e7caf00e885d8ae/commons-logging-1.1.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.springframework/spring-core/4.0.1.RELEASE/source/758732d7c02e8cc2a1866e529b21dda85f9cf326/spring-core-4.0.1.RELEASE-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.springframework/spring-core/4.0.1.RELEASE/jar/e39774d97c9dadfe49e6dfd16e3868bc1e390554/spring-core-4.0.1.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.springframework/spring-beans/4.0.1.RELEASE/source/9449d1d53ca942bf6b060d89a2787a6408ffcabe/spring-beans-4.0.1.RELEASE-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.springframework/spring-beans/4.0.1.RELEASE/jar/605582e95fb62b43fb4a843babdcf739f3497e92/spring-beans-4.0.1.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/aopalliance/aopalliance/1.0/source/4a4b6d692e17846a9f3da036438a7ac491d3c814/aopalliance-1.0-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/aopalliance/aopalliance/1.0/jar/235ba8b489512805ac13a8f9ea77a1ca5ebe3e8/aopalliance-1.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.springframework/spring-aop/4.0.1.RELEASE/source/f5189a198db33b2d8adc5801339d659ee92f9040/spring-aop-4.0.1.RELEASE-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.springframework/spring-aop/4.0.1.RELEASE/jar/ff68e4cfdbb2be3e8d8a7f34e7cbacc1860dfe75/spring-aop-4.0.1.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.springframework/spring-expression/4.0.1.RELEASE/source/bb4945a162af9acf045309885b455ecdfcc7f7cd/spring-expression-4.0.1.RELEASE-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.springframework/spring-expression/4.0.1.RELEASE/jar/452cb22401e868a1e79677dd22b6a3097fc603fa/spring-expression-4.0.1.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.springframework/spring-context/4.0.1.RELEASE/source/148fc52b7d7ac01b5a67642a35d914702385c037/spring-context-4.0.1.RELEASE-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.springframework/spring-context/4.0.1.RELEASE/jar/cb996939c8d48ae55ec933041f17e7fba4d9e27d/spring-context-4.0.1.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.springframework/spring-web/4.0.1.RELEASE/source/e9f9d0649e61af469444970e256c7224ca10e3bc/spring-web-4.0.1.RELEASE-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/org.springframework/spring-web/4.0.1.RELEASE/jar/2ace92025f042e1d3ddfdbba093172e3572ac130/spring-web-4.0.1.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/com.fasterxml.jackson.core/jackson-annotations/2.3.0/source/cc964b08f8d37e3d8465de923b9e6321107a5429/jackson-annotations-2.3.0-sources.jar" kind="lib" path="C:/Users/lwachowi/.gradle/caches/artifacts-24/filestore/com.fasterxml.jackson.core/jackson-annotations/2.3.0/bundle/f5e853a20b60758922453d56f9ae1e64af5cb3da/jackson-annotations-2.3.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+</classpath>

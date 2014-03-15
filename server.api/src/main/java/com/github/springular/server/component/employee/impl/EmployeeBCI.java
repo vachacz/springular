@@ -23,25 +23,27 @@ public class EmployeeBCI extends BaseBCI implements IEmployeeBCI {
   @Autowired 
   SalaryRepository salaryRepository;
   
-	@Autowired 
-	EmployeeRepository employeeRepository;
-	
-	@Override
-	public List<EmployeeDO> getEmployees() {
-	  List<EmployeeBE> employees = employeeRepository.findAll();
-	  return convert(employees).toType(EmployeeDO.class);
-	}
+  @Autowired
+  EmployeeRepository employeeRepository;
+
+  @Override
+  public List<EmployeeDO> getEmployees() {
+    List<EmployeeBE> employees = employeeRepository.findAll();
+    return convert(employees).toType(EmployeeDO.class);
+  }
 	
   @Override
   public List<SalaryDO> getSalaries(SalaryQueryCriteriaDO criteria) {
     List<SalaryBE> salaries = salaryRepository.filterByCriteria(criteria);
+    // List<SalaryBE> salaries = salaryRepository.findSalariesByYearAndMonth(2013, 2);
+    // List<SalaryBE> salaries = salaryRepository.findSalariesByYear(2013);
     return convert(salaries).toType(SalaryDO.class);
   }
   
 	@Override
 	public void createOrUpdateEmployee(@Valid EmployeeDO employee) {
 	  EmployeeBE employeeBE = convert(employee).toType(EmployeeBE.class);
-	  
+
 		Builder errorBuilder = BusinessException.build();
 
 		if (! Character.isUpperCase(employeeBE.getFirstName().charAt(0))) {
@@ -49,8 +51,8 @@ public class EmployeeBCI extends BaseBCI implements IEmployeeBCI {
 		}
 
 		if (! Character.isUpperCase(employeeBE.getLastName().charAt(0))) {
-			errorBuilder.addMessage("Last name must be capitalized");
-		}
+            errorBuilder.addMessage("Last name must be capitalized");
+        }
 
 		if (errorBuilder.hasMessages()) {
 			throw errorBuilder.exception();

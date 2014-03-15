@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: spring-jdbc-3.2.8.RELEASE">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/artifacts-24/filestore/org.springframework/spring-jdbc/3.2.8.RELEASE/jar/8fc09a51ca267726ffd284ab4de7c02f667da2ad/spring-jdbc-3.2.8.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/artifacts-24/filestore/org.springframework/spring-jdbc/3.2.8.RELEASE/source/39c9d9ef5d942a28fb5c13492ac2c5a7f02da86d/spring-jdbc-3.2.8.RELEASE-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
