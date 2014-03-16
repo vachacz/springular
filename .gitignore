@@ -31,3 +31,7 @@
 /build
 /node_modules
 *.iml
+/server.war/server.war.iml
+/server.webapp/server.webapp.iml
+/server.rest/server.rest.iml
+/springular.ear/springular.ear.iml
