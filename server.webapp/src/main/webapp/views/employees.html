@@ -24,7 +24,7 @@
       	<td></td>
       </tr>
       
-      <tr ng-repeat="employee in employeesFilteredList | orderBy:employeeOrderPredicate:employeeOrderReverse | startFrom:(employeesPage-1)*employeesPerPage | limitTo:employeesPerPage">
+      <tr class="employeeTable" ng-repeat="employee in employeesFilteredList | orderBy:employeeOrderPredicate:employeeOrderReverse | startFrom:(employeesPage-1)*employeesPerPage | limitTo:employeesPerPage">
         <td>{{ employee.login }}</td>
         <td>{{ employee.firstName }}</td>
         <td>{{ employee.lastName }}</td>

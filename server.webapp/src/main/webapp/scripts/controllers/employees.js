@@ -1,6 +1,6 @@
 var SpringularEmployee = angular.module('module.employeeAdministration', [ 'springular.rest', 'ui.bootstrap' ]);
 
-SpringularEmployee.controller('controller.employees', ['$scope', '$modal', '$location', '$http', 'RestApiEmployee', 'filterFilter', function ($scope, $modal, $location, $http, RestApiEmployee, filterFilter) {
+SpringularEmployee.controller('controller.employees', ['$scope', '$modal', '$location', 'RestApiEmployee', 'filterFilter', function ($scope, $modal, $location, RestApiEmployee, filterFilter) {
 
 	$scope.employeeOrderReverse = false; 
 	$scope.employeeOrderPredicate = '';
@@ -50,13 +50,13 @@ SpringularEmployee.controller('controller.employees', ['$scope', '$modal', '$loc
     }
     
     $scope.filterEmployees = function() {
-    	$scope.employeesFilteredList = 
+    	$scope.employeesFilteredList =
     		filterFilter($scope.employees, { 
     			login:     $scope.filterCriteria.login, 
     			firstName: $scope.filterCriteria.firstName,
     			lastName:  $scope.filterCriteria.lastName 
     		});
-    	$scope.employeesTotal = $scope.employeesFilteredList.length; 
+    	$scope.employeesTotal = $scope.employeesFilteredList.length;
     }
     
 	$scope.sortClass = function(sortAttributeName) {

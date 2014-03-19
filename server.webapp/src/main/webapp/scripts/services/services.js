@@ -4,7 +4,9 @@ SpringularRest.factory('RestApiEmployee', function ($resource) {
 
 SpringularRest.factory('RestApiSalary', function ($http) {
 	return {
-	    'query' : function(criteria) { return $http({ url:'/angular-rest/secured/salary', method: 'POST', data: criteria }); }
+	    'query' : function(criteria) {
+            return $http({ url:'/angular-rest/secured/salary', method: 'POST', data: criteria });
+        }
     }
 });
 
