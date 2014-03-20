@@ -75,7 +75,7 @@ public class EmployeeControllerTest {
         mockMvc.perform(delete("/employee/" + firstId))
                 .andExpect(status().isOk());
 
-        assertThat(employeeRepository.exists(3)).isFalse();
+        assertThat(employeeRepository.findByLogin("login003")).isNull();
     }
 
     @Test
@@ -90,7 +90,7 @@ public class EmployeeControllerTest {
         List<EmployeeBE> employees = employeeRepository.findAll();
 
         EmployeeBE employeeBE = employeeRepository.findByLogin("login004");
-        
+
         assertThat(employeeBE).isNotNull();
         assertThat(employeeBE.getFirstName()).isEqualTo("John");
         assertThat(employeeBE.getLastName()).isEqualTo("Kennedy");
