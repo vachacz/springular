@@ -17,13 +17,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.github.springular.server.exception.BusinessException;
 import com.github.springular.server.exception.BusinessException.Builder;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 @Aspect
 public class ValidationAspect {
 
 	private static final Class<?>[] DEFAULT_PROFILE = new Class[] {};
-	
-	@Autowired Validator validator;
+
+    @Autowired
+    @Qualifier("localValidatorFactoryBean")
+    Validator validator;
 
 	@Around("execution(public * com.github.springular.server..*BCI.* (..))")
 	public Object validateParams(ProceedingJoinPoint joinPoint) throws Throwable {

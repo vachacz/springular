@@ -16,13 +16,13 @@ import com.github.springular.server.component.employee.EmployeeDO;
 @Controller
 public class EmployeeController {
 
-	@Autowired IEmployeeBCI employeeBCI;
+  @Autowired IEmployeeBCI employeeBCI;
 	
-	@ResponseBody
-	@RequestMapping(value = "/employee", method = RequestMethod.GET)
-	public List<EmployeeDO> getEmployees() {
-		return employeeBCI.getEmployees();
-	}
+  @ResponseBody
+  @RequestMapping(value = "/employee", method = RequestMethod.GET)
+  public List<EmployeeDO> getEmployees() {
+    return employeeBCI.getEmployees();
+  }
 	
   @ResponseBody
   @RequestMapping(value = "/employee/{id}", method = RequestMethod.POST)
@@ -43,4 +43,3 @@ public class EmployeeController {
   }
     
 }
-

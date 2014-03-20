@@ -8,4 +8,5 @@ import org.springframework.stereotype.Component;
 @Component
 public interface EmployeeRepository extends JpaRepository<EmployeeBE, Integer> {
 
+    EmployeeBE findByLogin(String login);
 }

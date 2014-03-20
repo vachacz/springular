@@ -6,6 +6,7 @@ AngularJS demo application.
 Technology stack:
 - Gradle 1.6
 - AngularJS 1.2
+- Jasmine 2.0.0 + Karma
 - Spring 4.0.1
 - Spring Data JPA 1.5.0
 - Hibernate 4.3.1 (as JPA provider)
@@ -43,6 +44,8 @@ DONE
     - HTTP 401 handing in Angular interceptor
   - Bootstrap layout 
     - Superhero Theme - http://bootswatch.com/superhero
+  - Jasmine (2.0.0) unit tests
+  - Karma runner (configured within IntelliJ)
 - **DEPLOYMENT**:
   - Openshift integration 
     - Url: https://app-springular.rhcloud.com
@@ -63,7 +66,6 @@ TODO
   - token based CSRF resitance
 - testing
   - server side unit tests + integration tests with rest
-  - client (+jasmine, +karma)
 - funcionality
   - registration
 - logging

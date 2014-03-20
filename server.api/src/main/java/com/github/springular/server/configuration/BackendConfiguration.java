@@ -41,11 +41,6 @@ public class BackendConfiguration {
   }
   
   @Bean
-  public DummyDataCreator dummyDataCreator() {
-    return new DummyDataCreator();
-  }
-  
-  @Bean
   public LocalValidatorFactoryBean localValidatorFactoryBean() {
     ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
     messageSource.setBasename("classpath:messages/validation");
