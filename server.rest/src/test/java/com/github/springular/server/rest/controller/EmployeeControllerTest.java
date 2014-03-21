@@ -6,6 +6,7 @@ import com.github.springular.server.component.employee.EmployeeDO;
 import com.github.springular.server.component.employee.IEmployeeBCI;
 import com.github.springular.server.component.employee.Nationality;
 import com.github.springular.server.component.employee.entity.EmployeeBE;
+import com.github.springular.server.component.employee.entity.EmployeeConverters;
 import com.github.springular.server.component.employee.impl.EmployeeBCI;
 import com.github.springular.server.component.employee.repository.EmployeeRepository;
 import com.github.springular.server.configuration.BackendConfiguration;
@@ -42,7 +43,7 @@ public class EmployeeControllerTest {
     MockMvc mockMvc;
 
     @Autowired
-    private WebApplicationContext webApplicationContext;
+    WebApplicationContext webApplicationContext;
 
     @Autowired
     IEmployeeBCI employeeBCI;
@@ -80,14 +81,11 @@ public class EmployeeControllerTest {
 
     @Test
     public void shouldCreateEmployee() throws Exception {
-
         mockMvc.perform(post("/employee/")
                     .contentType(MediaType.APPLICATION_JSON)
                     .content(asJson(employee("login004", "John", "Kennedy")))
                 )
                 .andExpect(status().isOk());
-
-        List<EmployeeBE> employees = employeeRepository.findAll();
 
         EmployeeBE employeeBE = employeeRepository.findByLogin("login004");
 
@@ -96,9 +94,33 @@ public class EmployeeControllerTest {
         assertThat(employeeBE.getLastName()).isEqualTo("Kennedy");
     }
 
+    @Test
+    public void shouldUpdateEmployee() throws Exception {
+        employeeBCI.createOrUpdateEmployee(employee("login005", "Harrison", "Ford"));
+        EmployeeBE employee = employeeRepository.findByLogin("login005");
+
+        employee.setFirstName("Gerald");
+
+        mockMvc.perform(post("/employee/" + employee.getId())
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .content(asJson(employee))
+                )
+                .andExpect(status().isOk());
+
+        EmployeeBE employeeBE = employeeRepository.findOne(employee.getId());
+
+        assertThat(employeeBE).isNotNull();
+        assertThat(employeeBE.getFirstName()).isEqualTo("Gerald");
+        assertThat(employeeBE.getLastName()).isEqualTo("Ford");
+    }
+
     private byte[] asJson(EmployeeDO employee) throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
         return mapper.writerWithDefaultPrettyPrinter().writeValueAsBytes(employee);
+    }
+
+    private byte[] asJson(EmployeeBE employee) throws JsonProcessingException {
+        return asJson(new EmployeeConverters.BEToDOConverter().convert(employee));
     }
 
     private EmployeeDO employee(String login, String firstName, String lastName) {
