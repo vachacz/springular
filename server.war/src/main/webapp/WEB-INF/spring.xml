@@ -18,6 +18,6 @@
 
   <!-- json end-point configuration -->
   <bean class="com.github.springular.server.configuration.SpringSecurityConfig" />
-  <bean class="com.github.springular.server.configuration.JsonEndpointConfig" />
+  <bean class="com.github.springular.server.configuration.JsonEndpointConfiguration" />
   
 </beans:beans>

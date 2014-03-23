@@ -40,12 +40,12 @@ public class SalaryRepositoryImpl implements SalaryRepositoryCustom {
     if (criteria.hasEmployeeLastName()) {
       query.where(employee.lastName.containsIgnoreCase(criteria.getEmployeeLastName()));
     }
-    
-    if (criteria.isOrderSpecified()) {
+
+    if (criteria.hasSpecifiedOrder()) {
       query.orderBy(computeOrderType(criteria.getOrderType()));
     }
-    
-    int limit = criteria.getItemsProPage() != null ? criteria.getItemsProPage() : 10; 
+
+    int limit = criteria.getItemsProPage() != null ? criteria.getItemsProPage() : 10;
     query.limit(limit);
     
     return query.list(salary);

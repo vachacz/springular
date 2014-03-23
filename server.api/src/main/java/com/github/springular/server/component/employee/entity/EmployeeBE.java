@@ -15,7 +15,7 @@ public class EmployeeBE {
   @GeneratedValue
   private Integer id;
   
-  @OneToMany(mappedBy="employee", cascade=CascadeType.REMOVE)
+  @OneToMany(mappedBy="employee", cascade=CascadeType.ALL)
   private List<SalaryBE> salaries;
   
   private String login;

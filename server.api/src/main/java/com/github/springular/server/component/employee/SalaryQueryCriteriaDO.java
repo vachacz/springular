@@ -66,7 +66,7 @@ public class SalaryQueryCriteriaDO {
     this.itemsProPage = itemsProPage;
   }
   
-  public boolean isOrderSpecified() {
+  public boolean hasSpecifiedOrder() {
     return this.orderType != null;
   }
   

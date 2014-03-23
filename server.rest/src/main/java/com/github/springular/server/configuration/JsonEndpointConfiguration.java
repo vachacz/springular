@@ -17,7 +17,7 @@ import com.github.springular.server.rest.controller.ControllerPackegeMarker;
 
 @Configuration
 @ComponentScan(basePackageClasses = { ControllerPackegeMarker.class })
-public class JsonEndpointConfig extends WebMvcConfigurationSupport {
+public class JsonEndpointConfiguration extends WebMvcConfigurationSupport {
 
   @Autowired
   private MappingJackson2HttpMessageConverter MappingJackson2HttpMessageConverter;
