@@ -2,6 +2,7 @@ package com.github.springular.server.rest.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.springular.server.common.SpringularIntegerationRestControllerTest;
 import com.github.springular.server.component.employee.EmployeeDO;
 import com.github.springular.server.component.employee.IEmployeeBCI;
 import com.github.springular.server.component.employee.Nationality;
@@ -11,7 +12,6 @@ import com.github.springular.server.component.employee.repository.EmployeeReposi
 import com.github.springular.server.configuration.BackendConfiguration;
 import com.github.springular.server.configuration.DataSourceConfiguration;
 import com.github.springular.server.configuration.JsonEndpointConfiguration;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,25 +19,17 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.web.context.WebApplicationContext;
 
-import static org.assertj.core.api.Assertions.*;
-import static org.hamcrest.Matchers.*;
-
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.hamcrest.Matchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {JsonEndpointConfiguration.class, BackendConfiguration.class, DataSourceConfiguration.class})
 @WebAppConfiguration
-public class EmployeeControllerTest {
-
-    MockMvc mockMvc;
-
-    @Autowired
-    WebApplicationContext webApplicationContext;
+public class EmployeeControllerTest extends SpringularIntegerationRestControllerTest {
 
     @Autowired
     IEmployeeBCI employeeBCI;
@@ -45,17 +37,12 @@ public class EmployeeControllerTest {
     @Autowired
     EmployeeRepository employeeRepository;
 
-    @Before
-    public void configureEmployeeEndpoint() {
-        mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
-    }
-
     @Test
     public void shouldGetEmployees() throws Exception {
         employeeBCI.createOrUpdateEmployee(employee("login001", "Barrack", "Obama"));
         employeeBCI.createOrUpdateEmployee(employee("login002", "Bill", "Clinton"));
 
-        mockMvc.perform(get("/employee"))
+        mvc().perform(get("/employee"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].firstName", is("Barrack")))
                 .andExpect(jsonPath("$[1].firstName", is("Bill")));
@@ -67,7 +54,7 @@ public class EmployeeControllerTest {
 
         Integer firstId = employeeBCI.getEmployees().get(0).getId();
 
-        mockMvc.perform(delete("/employee/" + firstId))
+        mvc().perform(delete("/employee/" + firstId))
                 .andExpect(status().isOk());
 
         assertThat(employeeRepository.findByLogin("login003")).isNull();
@@ -75,10 +62,10 @@ public class EmployeeControllerTest {
 
     @Test
     public void shouldCreateEmployee() throws Exception {
-        mockMvc.perform(post("/employee/")
-                    .contentType(MediaType.APPLICATION_JSON)
-                    .content(asJson(employee("login004", "John", "Kennedy")))
-                )
+        mvc().perform(post("/employee/")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(asJson(employee("login004", "John", "Kennedy")))
+        )
                 .andExpect(status().isOk());
 
         EmployeeBE employeeBE = employeeRepository.findByLogin("login004");
@@ -95,10 +82,10 @@ public class EmployeeControllerTest {
 
         employee.setFirstName("Gerald");
 
-        mockMvc.perform(post("/employee/" + employee.getId())
-                    .contentType(MediaType.APPLICATION_JSON)
-                    .content(asJson(employee))
-                )
+        mvc().perform(post("/employee/" + employee.getId())
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(asJson(employee))
+        )
                 .andExpect(status().isOk());
 
         EmployeeBE employeeBE = employeeRepository.findOne(employee.getId());

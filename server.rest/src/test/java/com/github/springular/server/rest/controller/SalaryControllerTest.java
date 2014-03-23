@@ -2,58 +2,27 @@ package com.github.springular.server.rest.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.github.springular.server.component.employee.IEmployeeBCI;
+import com.github.springular.server.common.SpringularIntegerationRestControllerTest;
 import com.github.springular.server.component.employee.Nationality;
 import com.github.springular.server.component.employee.SalaryQueryCriteriaDO;
 import com.github.springular.server.component.employee.entity.EmployeeBE;
 import com.github.springular.server.component.employee.entity.SalaryBE;
 import com.github.springular.server.component.employee.repository.EmployeeRepository;
-import com.github.springular.server.component.employee.repository.SalaryRepository;
-import com.github.springular.server.configuration.BackendConfiguration;
-import com.github.springular.server.configuration.DataSourceConfiguration;
-import com.github.springular.server.configuration.JsonEndpointConfiguration;
-import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.ResultActions;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.web.context.WebApplicationContext;
 
 import java.util.ArrayList;
 
-import static org.hamcrest.Matchers.*;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.hamcrest.Matchers.is;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {JsonEndpointConfiguration.class, BackendConfiguration.class, DataSourceConfiguration.class})
-@WebAppConfiguration
-public class SalaryControllerTest extends AbstractTransactionalJUnit4SpringContextTests {
-
-    MockMvc mockMvc;
-
-    @Autowired
-    WebApplicationContext webApplicationContext;
-
-    @Autowired
-    IEmployeeBCI employeeBCI;
+public class SalaryControllerTest extends SpringularIntegerationRestControllerTest {
 
     @Autowired
     EmployeeRepository employeeRepository;
-
-    @Before
-    public void configureEmployeeEndpoint() {
-        mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
-    }
 
     @Test
     public void shouldFilterSalariesByEmployeeFirstName() throws Exception {
@@ -73,7 +42,7 @@ public class SalaryControllerTest extends AbstractTransactionalJUnit4SpringConte
                                     .byYear(2012)
                                     .asJson();
 
-        ResultActions result = mockMvc.perform(post("/secured/salary")
+        mvc().perform(post("/secured/salary")
                     .contentType(MediaType.APPLICATION_JSON)
                     .content(criteriaJson)
                 )
