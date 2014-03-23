@@ -28,6 +28,7 @@ DONE
   - Spring Framework (4.0.1)
     - java-based Spring configuration
     - rest service endpoint
+      - integration tests with in memory database based on MockMvc
     - cookie based security (+login, +logout, but not yet CSRF safe)
     - aspect driven Hibernate Validator (+ custom validation messages)
     - sample GET + POST requests implementation
@@ -64,28 +65,29 @@ TODO
 - security
   - simple permission system (+role based, +field based?)
   - token based CSRF resitance
-- testing
-  - server side unit tests + integration tests with rest
-- funcionality
-  - registration
 - logging
 - RequireJS
-- more ... TBD?
 
 SETUP
 ==========
 - prerequisites: 
   - Gradle 1.6
-  - IDE: Eclipse (including tc-server / tomcat)
-- execute `gradle eclipse`
-- import projects into eclipse
-- create a server in eclipse
-- add `server.war` and `server.webapp` projects to server deployments
+  - Servlet container (tc-server, tomcat or similar)
+  - *Eclipse*
+    - execute `gradle eclipse`
+    - import existing projects into workspace
+    - create a server
+    - add `server.war` and `server.webapp` projects to server deployments
+    - *FYI: * Karma integration has not beed tested
+  - ... or *IntelliJ Idea*
+    - import projects as Gradle projects
+    - create a server instance
+    - install Karma plugin und user `karma.conf.js` file from the root directory
 - start the server and publish the application
   - make sure that context-root is properly set in your http server
     - `http://localhost:<port>/angular-rest`
     - `http://localhost:<port>/angular-webapp`
-- test the stuff:
+- test if the application is online:
   - webservice: `http://localhost:<port>/angular-rest/users`
   - application: `http://localhost:<port>/angular-webapp/index.html`
 - in order to generate QueryDsl classes execute `gradle compileJava` 
